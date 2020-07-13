@@ -1,0 +1,28 @@
+@import '~open-color/open-color.scss';
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+$text-color: $oc-gray-1;
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    font-family: $font-family;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+}
