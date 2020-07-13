@@ -5,31 +5,24 @@ import Gnb from './Gnb'
 
 const Header = () => {
     return (
-        <Relative>
+        <>
             <SHeader>
-                <img style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
+                <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
                 <Link to="/">
                     <h1>KUICS</h1>
                 </Link>
             </SHeader>
             <Gnb />
-        </Relative>
+        </>
     )
 }
 
 const SHeader = styled.header`
     display: inline-block;
-    left: 30px;
-    text-align: center;
-    padding-bottom: 3rem;
-
+    padding: 1rem 0 2rem 1rem;
     h1 {
         font-size: 2rem;
     }
-`
-
-const Relative = styled.div`
-    position: relative;
 `
 
 export default Header
