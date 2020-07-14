@@ -20,7 +20,7 @@ jobs:
       - name: Clean Up
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: docker rm --force kuics-frontend
+          command: docker rm --force kuics-frontend && docker rmi kuicsofficial/kuics-frontend
           host: ${{secrets.SERVER}}
           username: ${{secrets.USERNAME}}
           privateKey: ${{secrets.PRIVATE_KEY}}
