@@ -1,14 +1,14 @@
 FROM node:12
 
-WORKDIR /KUICS_frontend
+WORKDIR /kuics-frontend
 
 ARG CACHEBUST=1
 
-COPY package.json /KUICS_frontend
-COPY yarn.lock /KUICS-frontend
+COPY package.json /kuics-frontend
+COPY yarn.lock /kuics-frontend
 RUN yarn install
 
-COPY . /KUICS_frontend
+COPY . /kuics-frontend
 CMD yarn build && yarn serve
 
 EXPOSE 3000
