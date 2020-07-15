@@ -27,8 +27,7 @@ const Board = () => {
     }, [])
 
     return (
-        <Layout>
-            <Header title="Board" />
+        <>
             <ScrollList className="noScroll">
                 {loading
                     ? text.map((data, id) => {
@@ -37,7 +36,7 @@ const Board = () => {
                     : 'Loading'}
             </ScrollList>
             <Footer />
-        </Layout>
+        </>
     )
 }
 

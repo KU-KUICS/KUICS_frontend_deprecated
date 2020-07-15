@@ -27,8 +27,7 @@ const Notice = () => {
     }, [])
 
     return (
-        <Layout>
-            <Header title="Notice" />
+        <>
             <ScrollList className="noScroll">
                 {loading
                     ? text.map((data, id) => {
@@ -37,7 +36,7 @@ const Notice = () => {
                     : 'Loading'}
             </ScrollList>
             <Footer />
-        </Layout>
+        </>
     )
 }
 

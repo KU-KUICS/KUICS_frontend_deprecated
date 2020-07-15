@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 const Gnb = () => {
     return (
@@ -43,7 +44,8 @@ const List = styled.li`
         color: red;
     }
 
-    &:active {
+    &:active,
+    &:focus {
         font-size: 1.5rem;
         color: red;
     }
