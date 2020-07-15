@@ -34,6 +34,6 @@ jobs:
       - name: Sleep for 10 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '10s'
+          time: '30s'
       - name: Check Build Status
         run: wget test.kuics.kro.kr
