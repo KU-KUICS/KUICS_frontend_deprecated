@@ -13,12 +13,12 @@ const PostList = (props, key) => {
                 <PostNumber>{ID}</PostNumber>
                 <Title>{title}</Title>
                 <TagList>
-                    <Tag color="green">
+                    <Tag color="green" textColor="white">
                         <span className="tagText">Active&nbsp;</span>
                         <Emoji symbol="✅" label="checked" />
                     </Tag>
-                    <Tag color="red">
-                        <span className="tagText">Closed&nbsp;</span>
+                    <Tag color="skyblue" textColor="black">
+                        <span className="tagText">Enhancement Improved&nbsp;</span>
                         <Emoji symbol="🚀" label="rocket" />
                     </Tag>
                 </TagList>
@@ -44,12 +44,16 @@ const Tag = styled.div`
     text-align: center;
     align-items: center;
     background-color: ${props => props.color};
+    span {
+        color: ${props => props.textColor};
+    }
     padding: 0px 5px 0px 5px;
     font-size: 1rem;
     margin: 0px 0px 0px 5px;
     border-radius: 5px;
     height: 2rem;
     flex-shrink: 0;
+    vertical-align: top;
 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 `
