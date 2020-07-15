@@ -1,15 +1,17 @@
 import React from 'react'
-
 import './style.scss'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
-import Main from './container/Main'
-import Viewer from './container/Routing'
+import IntroForm from './IntroComponent/IntroForm'
+import Notice from './component/Notice'
+import Board from './component/Board'
 
 const App = () => {
     return (
         <Router>
-            <Main />
+            <Route exact path="/" component={IntroForm} />
+            <Route path="/notice" component={Notice} />
+            <Route path="/board" component={Board} />
         </Router>
     )
 }

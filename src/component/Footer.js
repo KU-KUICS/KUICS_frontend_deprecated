@@ -7,8 +7,8 @@ const Footer = () => {
 
 const SFooter = styled.footer`
     position: absolute;
-    bottom: 10px;
-    margin: 10px 0 10px 0;
+    margin: 20px;
+    bottom: 0px;
 `
 
 export default Footer
