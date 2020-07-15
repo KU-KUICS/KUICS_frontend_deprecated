@@ -5,11 +5,11 @@ import Footer from './Footer'
 import styled from 'styled-components'
 import PostList from './PostList'
 
-const Notice = () => {
+const Board = () => {
     const [text, setText] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const apiURL = './dummy/notice.json'
+    const apiURL = './dummy/board.json'
     const fetchData = URL => {
         Axios.get(URL)
             .then((data, err) => {
@@ -28,7 +28,7 @@ const Notice = () => {
 
     return (
         <Layout>
-            <Header title="Notice" />
+            <Header title="Board" />
             <ScrollList className="noScroll">
                 {loading
                     ? text.map((data, id) => {
@@ -60,4 +60,4 @@ const Layout = styled.div`
     max-width: 800px;
 `
 
-export default Notice
+export default Board

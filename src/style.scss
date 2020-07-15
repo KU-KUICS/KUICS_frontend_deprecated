@@ -3,8 +3,8 @@
 @import url(https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-$text-color: $oc-gray-0;
+$font-family: 'Montserrat', 'Noto Sans KR', 'Monaco', sans-serif;
+$text-color: $oc-gray-2;
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -12,9 +12,9 @@ $text-color: $oc-gray-0;
 }
 
 body {
-    background-color: black;
+    background-color: #1b1f25;
     font-family: $font-family;
-    color: white;
+    color: $text-color;
 }
 
 html,
@@ -45,6 +45,12 @@ h6 {
     word-break: keep-all;
 }
 
+h1,
+h2 {
+    font-size: 2rem;
+    color: $oc-gray-1#edf0f3;
+}
+
 a {
     text-decoration: none;
     color: $text-color;
@@ -52,4 +58,46 @@ a {
 
 p {
     font-size: 1.125rem;
+}
+
+.categoryNumber {
+    font-family: Monaco;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .tagText {
+        padding-left: 1px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .tagText {
+        display: none;
+    }
+}
+
+.noScroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.noScroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.separator {
+    width: 80%;
+    border: rgba(255, 255, 255, 0.3) solid 1px;
+    border-radius: 2px;
+
+    position: relative;
+    top: 1rem;
 }

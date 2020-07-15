@@ -5,31 +5,32 @@ import styled from 'styled-components'
 const Gnb = () => {
     return (
         <NavigatorList>
-            <Link to="/about">
-                <List>소개</List>
-            </Link>
-
             <Link to="/notice">
-                <List>공지사항</List>
+                <List>
+                    <span className="categoryNumber">0x00</span>&nbsp;공지사항
+                </List>
             </Link>
 
             <Link to="/board">
-                <List>게시판</List>
+                <List>
+                    <span className="categoryNumber">0x01</span>&nbsp;게시판
+                </List>
             </Link>
         </NavigatorList>
     )
 }
 
 const NavigatorList = styled.ul`
-    text-align: right;
+    text-align: left;
     position: absolute;
-    width: 100px;
-    right: 0;
+    padding-left: 2rem;
+    padding-right: 1rem;
+
+    width: 170px;
     display: inline-block;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2rem;
-    padding-right: 1rem;
 `
 
 const List = styled.li`
@@ -38,6 +39,11 @@ const List = styled.li`
     transition: all 0.2s ease;
 
     &:hover {
+        font-size: 1.5rem;
+        color: red;
+    }
+
+    &:active {
         font-size: 1.5rem;
         color: red;
     }
