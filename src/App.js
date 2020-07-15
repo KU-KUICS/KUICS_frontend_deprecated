@@ -3,8 +3,8 @@ import './style.scss'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import IntroForm from './IntroComponent/IntroForm'
-import Notice from './component/Notice'
-import Board from './component/Board'
+import Notice from './Component/Notice'
+import Board from './Component/Board'
 
 const App = () => {
     return (

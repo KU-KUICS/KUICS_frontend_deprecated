@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Gnb'
+import SearchBar from './SearchBar'
 
 const Header = ({ title }) => {
     return (
@@ -14,13 +15,32 @@ const Header = ({ title }) => {
                     </Link>
                 </SHeader>
                 <Gnb />
-                <Title>
-                    <span style={{ color: 'lime' }}>></span> {title}
-                </Title>
+                <RowBox>
+                    <Title>
+                        <span style={{ color: 'lime' }}>></span> {title}
+                    </Title>
+                    <Search>
+                        <SearchBar />
+                    </Search>
+                </RowBox>
             </Shadow>
         </>
     )
 }
+
+const RowBox = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const Search = styled.h2`
+    flex-grow: 1;
+
+    text-align: right;
+    font-size: 1.5rem;
+    padding: 0 2rem 20px 2rem;
+    font-family: Monaco;
+`
 
 const Title = styled.h2`
     font-family: Monaco;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Modal/Modal.scss'
-import Notice from '../component/Notice'
+import Notice from '../Component/Notice'
 
 const LoginModal = ({ isOpen, close }) => {
     return (

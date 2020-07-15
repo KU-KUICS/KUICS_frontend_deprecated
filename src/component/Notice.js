@@ -32,7 +32,7 @@ const Notice = () => {
             <ScrollList className="noScroll">
                 {loading
                     ? text.map((data, id) => {
-                          return PostList(data)
+                          return PostList(data, id)
                       })
                     : 'Loading'}
             </ScrollList>

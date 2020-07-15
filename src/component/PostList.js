@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
 
-const PostList = props => {
+const PostList = (props, key) => {
     const ID = props.boardNo
     const title = props.title
     const Excerpt = props.excerpt
 
     return (
-        <ColumnBox>
+        <ColumnBox key={key}>
             <RowBox>
                 <PostNumber>{ID}</PostNumber>
                 <Title>{title}</Title>
