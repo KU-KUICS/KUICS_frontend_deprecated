@@ -31,3 +31,5 @@ jobs:
           host: ${{secrets.SERVER}}
           username: ${{secrets.USERNAME}}
           privateKey: ${{secrets.PRIVATE_KEY}}
+      - name: Check Build Status
+        run: wget test.kuics.kro.kr
