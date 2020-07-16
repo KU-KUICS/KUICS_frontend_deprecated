@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 const Gnb = () => {
     return (

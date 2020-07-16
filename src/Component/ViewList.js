@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
-import Header from './Header'
+import { useLocation } from 'react-router-dom'
 import Footer from './Footer'
 import styled from 'styled-components'
 import PostList from './PostList'
 import fetching from '../Functions/fetching'
+import LazyLoad from 'react-lazyload'
 
-const Notice = () => {
+const targetList = ['/notice', '/board']
+
+const ViewList = ({ position }) => {
     const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const apiURL = './dummy/notice.json'
+    let location = useLocation()
+    let pathname = location.pathname
+
+    const apiURL = `./dummy/${pathname}.json`
+    useEffect(() => {
+        fetchData(apiURL)
+    }, [])
+
     const fetchData = async () => {
+        if (!targetList.includes(pathname)) {
+            throw new Error()
+        }
+
         const fetched = await fetching(apiURL)
         setFetch(fetched.boardList)
         setLoading(true)
     }
-
-    useEffect(() => {
-        fetchData(apiURL)
-    }, [])
 
     return (
         <>
             <ScrollList className="noScroll">
                 {loading
                     ? fetchedData.map((posts, id) => {
-                          return PostList(posts, id)
+                          return <LazyLoad key={id}>{PostList(posts, id)}</LazyLoad>
                       })
-                    : 'Loading'}
+                    : ''}
             </ScrollList>
             <Footer />
         </>
@@ -39,19 +48,10 @@ const ScrollList = styled.div`
     position: relative;
     flex: 1;
     overflow-y: scroll;
-    margin: 30px;
+    padding: 30px;
+    border-radius: 15px 15px 0 0px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
     margin-bottom: 50px;
 `
 
-const Layout = styled.div`
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    max-width: 800px;
-`
-
-export default Notice
+export default ViewList

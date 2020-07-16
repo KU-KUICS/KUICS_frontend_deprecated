@@ -3,11 +3,10 @@ import './style.scss'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import IntroForm from './IntroComponent/IntroForm'
-import Notice from './Component/Notice'
-import Board from './Component/Board'
 import Header from './Component/Header'
 
 import styled from 'styled-components'
+import ViewList from './Component/ViewList'
 
 const App = () => {
     return (
@@ -16,8 +15,8 @@ const App = () => {
                 <Header />
                 <Route exact path="/" component={IntroForm} />
 
-                <Route path="/notice" component={Notice} />
-                <Route path="/board" component={Board} />
+                <Route path="/notice" component={ViewList} />
+                <Route path="/board" component={ViewList} />
             </Layout>
         </Router>
     )

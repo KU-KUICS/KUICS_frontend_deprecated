@@ -2,23 +2,6 @@ import React, { createRef, forwardRef } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import styled from 'styled-components'
 
-const animationStyle = {
-    transition: 'width 0.75s cubic-bezier(0.000, 0.795, 0.000, 1.000)',
-}
-
-const baseStyles = {
-    open: {
-        width: 300,
-    },
-    closed: {
-        width: 0,
-    },
-    frame: {
-        border: 'solid 1px black',
-        borderRadius: 5,
-    },
-}
-
 const SearchBar = () => {
     const ref = createRef()
 

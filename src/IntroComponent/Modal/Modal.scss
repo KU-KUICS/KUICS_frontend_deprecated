@@ -47,16 +47,17 @@
             width: 100%;
             padding: 12px 0;
             border-radius: 0 0 10px 10px;
-            background-color: $oc-red-8;
+            background-color: $oc-orange-6;
             font-size: 13pt;
             border: 0;
-            color: $oc-gray-1;
+            font-weight: 600;
+            color: $oc-gray-8;
             cursor: pointer;
             &:hover {
-                background-color: $oc-red-9;
+                background-color: $oc-orange-9;
             }
             &:active {
-                background-color: $oc-red-9;
+                background-color: $oc-orange-9;
             }
         }
     }
