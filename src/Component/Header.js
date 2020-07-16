@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Gnb'
@@ -22,8 +22,7 @@ const Header = () => {
                 <Gnb />
                 <RowBox>
                     <Title>
-                        <span style={{ color: 'lime' }}></span>
-                        {pathname}
+                        <span style={{ color: 'lime' }}>{pathname}</span>
                     </Title>
                     <Search>
                         <SearchBar />
@@ -59,6 +58,7 @@ const Shadow = styled.div`
     background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 15px 15px;
+    margin-bottom: 15px;
 `
 
 const SHeader = styled.header`
