@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
+import fetching from '../Functions/fetching'
+
 import styled from 'styled-components'
 
+const { REACT_APP_API_HOST } = process.env
+
 const About = () => {
-    const [text, setText] = useState([])
+    const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const apiURL = './dummy/about.json'
-    const fetchData = URL => {
-        Axios.get(URL)
-            .then((data, err) => {
-                if (err) throw err
-                const fetched = data.data.about
-                setText(fetched)
-            })
-            .then(() => {
-                setLoading(true)
-            })
+    const apiURL = `http://${REACT_APP_API_HOST}/api/intro`
+
+    const fetchData = async () => {
+        const fetched = await fetching(apiURL)
+        setFetch(fetched.introList)
+        setLoading(true)
     }
 
     useEffect(() => {
@@ -25,10 +23,16 @@ const About = () => {
 
     return (
         <StyledWidth>
-            <h3>{loading ? text[0].title : 'Loading'}</h3>
             {loading
-                ? text[0].content.map((data, id) => {
-                      return <p key={id}>{data}</p>
+                ? fetchedData.map((contents, idx) => {
+                      return (
+                          <>
+                              <h3 key={idx}>{contents.title}</h3>
+                              {contents.content.map((paragraph, id) => {
+                                  return <p key={idx}>{paragraph}</p>
+                              })}
+                          </>
+                      )
                   })
                 : 'Loading'}
         </StyledWidth>
@@ -37,6 +41,10 @@ const About = () => {
 
 const StyledWidth = styled.div`
     max-width: 760px;
+
+    h3:nth-of-type(n + 2) {
+        padding-top: 2rem;
+    }
 `
 
 export default About

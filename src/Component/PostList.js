@@ -1,31 +1,46 @@
-import React from 'react'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
+
+import './PostList.scss'
 
 const PostList = (props, key) => {
     const ID = props.boardNo
     const title = props.title
     const Excerpt = props.excerpt
 
+    const pageTrans = 'trans'
+    const classNames = {
+        appear: `${pageTrans} appear`,
+        appearDone: `${pageTrans} appear done`,
+    }
+
     return (
-        <ColumnBox key={key}>
-            <RowBox>
-                <PostNumber>{ID}</PostNumber>
-                <Title>{title}</Title>
-                <TagList>
-                    <Tag color="green" textColor="white">
-                        <span className="tagText">Active&nbsp;</span>
-                        <Emoji symbol="✅" label="checked" />
-                    </Tag>
-                    <Tag color="skyblue" textColor="black">
-                        <span className="tagText">Enhancement Improved&nbsp;</span>
-                        <Emoji symbol="🚀" label="rocket" />
-                    </Tag>
-                </TagList>
-            </RowBox>
-            <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
-            <hr className="separator" />
-        </ColumnBox>
+        <UpMargin>
+            <TransitionGroup className="transitionGroup">
+                <CSSTransition key={key} classNames={classNames} timeout={300} appear>
+                    <ColumnBox key={key}>
+                        <RowBox>
+                            <PostNumber>{ID}</PostNumber>
+                            <Title>{title}</Title>
+                            <TagList>
+                                <Tag color="green" textColor="white">
+                                    <span className="tagText">Active&nbsp;</span>
+                                    <Emoji symbol="✅" label="checked" />
+                                </Tag>
+                                <Tag color="skyblue" textColor="black">
+                                    <span className="tagText">Enhancement Improved&nbsp;</span>
+                                    <Emoji symbol="🚀" label="rocket" />
+                                </Tag>
+                            </TagList>
+                        </RowBox>
+                        <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
+                        <hr className="separator" />
+                    </ColumnBox>
+                </CSSTransition>
+            </TransitionGroup>
+        </UpMargin>
     )
 }
 
@@ -76,7 +91,9 @@ const ColumnBox = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 4rem;
+`
 
+const UpMargin = styled.div`
     &:nth-of-type(n + 2) {
         margin-top: 2rem;
     }

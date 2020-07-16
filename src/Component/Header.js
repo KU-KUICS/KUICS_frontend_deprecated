@@ -1,11 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useMemo } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Gnb'
 import SearchBar from './SearchBar'
 
-const Header = ({ title }) => {
-    return (
+const Header = () => {
+    let location = useLocation()
+    let pathname = location.pathname
+
+    return pathname === '/' ? (
+        ''
+    ) : (
         <>
             <Shadow>
                 <SHeader>
@@ -17,7 +22,8 @@ const Header = ({ title }) => {
                 <Gnb />
                 <RowBox>
                     <Title>
-                        <span style={{ color: 'lime' }}>></span> {title}
+                        <span style={{ color: 'lime' }}></span>
+                        {pathname}
                     </Title>
                     <Search>
                         <SearchBar />

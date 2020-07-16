@@ -1,0 +1,14 @@
+$timing: 500ms;
+
+.trans {
+    transition: $timing;
+    transition-timing-function: ease;
+
+    &.appear {
+        opacity: 0;
+    }
+
+    &.done {
+        opacity: 1;
+    }
+}
