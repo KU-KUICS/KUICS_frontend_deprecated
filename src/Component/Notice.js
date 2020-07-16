@@ -4,22 +4,17 @@ import Header from './Header'
 import Footer from './Footer'
 import styled from 'styled-components'
 import PostList from './PostList'
+import fetching from '../Functions/fetching'
 
 const Notice = () => {
-    const [text, setText] = useState([])
+    const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState(false)
 
     const apiURL = './dummy/notice.json'
-    const fetchData = URL => {
-        Axios.get(URL)
-            .then((data, err) => {
-                if (err) throw err
-                const fetched = data.data.boardList
-                setText(fetched)
-            })
-            .then(() => {
-                setLoading(true)
-            })
+    const fetchData = async () => {
+        const fetched = await fetching(apiURL)
+        setFetch(fetched.boardList)
+        setLoading(true)
     }
 
     useEffect(() => {
@@ -30,8 +25,8 @@ const Notice = () => {
         <>
             <ScrollList className="noScroll">
                 {loading
-                    ? text.map((data, id) => {
-                          return PostList(data, id)
+                    ? fetchedData.map((posts, id) => {
+                          return PostList(posts, id)
                       })
                     : 'Loading'}
             </ScrollList>

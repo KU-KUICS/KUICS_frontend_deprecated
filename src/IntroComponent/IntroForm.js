@@ -27,12 +27,12 @@ const IntroForm = () => {
                     </StyledCenterRightLine>
                     <StyledCenter>
                         <h2>고려대학교 컴퓨터학과 정보보호학회</h2>
-                        <h3 style={{ color: '#e4e7eb', 'font-weight': '400' }}>
+                        <h3 style={{ color: '#e4e7eb', fontWeight: '400' }}>
                             Korea University Institute of Computer Security
                         </h3>
                         <StyledRight>
                             <span
-                                style={{ 'margin-right': '10px' }}
+                                style={{ marginRight: '10px' }}
                                 onClick={() => clickEvent(setAboutState, aboutState)}
                             >
                                 {'소개'}
