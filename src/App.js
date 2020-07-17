@@ -14,7 +14,6 @@ const App = () => {
             <Layout>
                 <Header />
                 <Route exact path="/" component={IntroForm} />
-
                 <Route path="/notice" component={ViewList} />
                 <Route path="/board" component={ViewList} />
             </Layout>
