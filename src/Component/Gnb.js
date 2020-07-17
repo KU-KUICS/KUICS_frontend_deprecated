@@ -26,7 +26,6 @@ const NavigatorList = styled.ul`
     padding-left: 2rem;
     padding-right: 1rem;
 
-    width: 170px;
     display: inline-block;
     font-weight: 500;
     font-size: 1.4rem;

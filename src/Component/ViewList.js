@@ -58,14 +58,4 @@ const ScrollList = styled.div`
     margin-bottom: 50px;
 `
 
-const ScrollList2 = styled.div`
-    position: relative;
-    flex: 1;
-    overflow-y: scroll;
-    padding: 30px;
-    border-radius: 15px 15px 0 0px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
-    margin-bottom: 50px;
-`
-
 export default ViewList

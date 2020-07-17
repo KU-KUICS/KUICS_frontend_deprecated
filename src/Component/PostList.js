@@ -18,35 +18,35 @@ const PostList = (props, key) => {
     }
 
     return (
-
-            <TransitionGroup className="transitionGroup card">
-                <CSSTransition key={key} classNames={classNames} timeout={300} appear>
-                    <ColumnBox key={key}>
-                        <RowBox>
-                            <PostNumber>{ID}</PostNumber>
-                            <Title>{title}</Title>
-                            <TagList>
-                                <Tag color="green" textColor="white">
-                                    <span className="tagText">Active&nbsp;</span>
-                                    <Emoji symbol="✅" label="checked" />
-                                </Tag>
-                                <Tag color="purple" textColor="white">
-                                    <span className="tagText">Improvement needed&nbsp;</span>
-                                    <Emoji symbol="👷🏼‍♂️" label="constructing" />
-                                </Tag>
-                            </TagList>
-                        </RowBox>
-                        <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
-                        <hr className="separator" />
-                    </ColumnBox>
-                </CSSTransition>
-            </TransitionGroup>
+        <TransitionGroup className="transitionGroup card">
+            <CSSTransition key={key} classNames={classNames} timeout={300} appear>
+                <ColumnBox key={key}>
+                    <RowBox>
+                        <PostNumber>{ID}</PostNumber>
+                        <Title>{title}</Title>
+                        <TagList>
+                            <Tag color="green" textColor="white">
+                                <span className="tagText">Active&nbsp;</span>
+                                <Emoji symbol="✅" label="checked" />
+                            </Tag>
+                            <Tag color="purple" textColor="white">
+                                <span className="tagText">Improvement needed&nbsp;</span>
+                                <Emoji symbol="👷🏼‍♂️" label="constructing" />
+                            </Tag>
+                        </TagList>
+                    </RowBox>
+                    <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
+                    <hr className="separator" />
+                </ColumnBox>
+            </CSSTransition>
+        </TransitionGroup>
     )
 }
 
 export default PostList
 
 const TagList = styled.div`
+    align-self: flex-start;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
