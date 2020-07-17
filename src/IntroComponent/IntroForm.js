@@ -30,10 +30,7 @@ const IntroForm = () => {
                             Korea University Institute of Computer Security
                         </h3>
                         <StyledRight>
-                            <span
-                                style={{ marginRight: '10px' }}
-                                onClick={() => clickEvent(setAboutState, aboutState)}
-                            >
+                            <span style={{ marginRight: '10px' }} onClick={() => clickEvent(setAboutState, aboutState)}>
                                 {'소개'}
                             </span>
                             <span onClick={() => clickEvent(setModalState, modalState)}>로그인</span>
@@ -70,15 +67,14 @@ const StyledShrink = styled.div`
 const ColumnLayout = styled.div`
     padding: 30px;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
+    display: inline-block;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: -webkit-flex;
     -webkit-align-item: center;
     -webkit-justify-content: center;
 `
