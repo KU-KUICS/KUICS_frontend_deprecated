@@ -11,13 +11,13 @@ const About = () => {
 
     const apiURL = `http://${REACT_APP_API_HOST}/api/intro`
 
-    const fetchData = async () => {
-        const fetched = await fetching(apiURL)
-        setFetch(fetched.introList)
-        setLoading(true)
-    }
+    useEffect(() => {
+        const fetchData = async () => {
+            const fetched = await fetching(apiURL)
+            setFetch(fetched.introList)
+            setLoading(true)
+        }
 
-    useEffect((fetchData, apiURL) => {
         fetchData(apiURL)
     }, [])
 
