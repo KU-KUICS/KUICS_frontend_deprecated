@@ -2,6 +2,8 @@ import React, { createRef, forwardRef } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import styled from 'styled-components'
 
+import './SearchBar.scss'
+
 const SearchBar = () => {
     const ref = createRef()
 
@@ -13,7 +15,7 @@ const SearchBar = () => {
 
     return (
         <>
-            <BarComponent ref={ref} />
+            <BarComponent className={'Bar'} ref={ref} />
             <FiSearch onClick={debug} />
         </>
     )

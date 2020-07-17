@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
 import LazyLoad from 'react-lazyload'
+import oc from 'open-color'
 
 import './PostList.scss'
 
@@ -10,6 +11,7 @@ const PostList = (props, key) => {
     const ID = props.boardNo
     const title = props.title
     const Excerpt = props.excerpt
+    
 
     const pageTrans = 'trans'
     const classNames = {
@@ -18,35 +20,42 @@ const PostList = (props, key) => {
     }
 
     return (
-
-            <TransitionGroup className="transitionGroup card">
-                <CSSTransition key={key} classNames={classNames} timeout={300} appear>
-                    <ColumnBox key={key}>
-                        <RowBox>
-                            <PostNumber>{ID}</PostNumber>
-                            <Title>{title}</Title>
-                            <TagList>
-                                <Tag color="green" textColor="white">
-                                    <span className="tagText">Active&nbsp;</span>
-                                    <Emoji symbol="✅" label="checked" />
-                                </Tag>
-                                <Tag color="purple" textColor="white">
-                                    <span className="tagText">Improvement needed&nbsp;</span>
-                                    <Emoji symbol="👷🏼‍♂️" label="constructing" />
-                                </Tag>
-                            </TagList>
-                        </RowBox>
+        <TransitionGroup className="transitionGroup card">
+            <CSSTransition key={key} classNames={classNames} timeout={300} appear>
+                <ColumnBox key={key}>
+                    <RowBox>
+                        <PostNumber>{ID}</PostNumber>
+                        <Title>{title}</Title>
+                        <TagList>
+                            <Tag color="green" textColor="white">
+                                <span className="tagText">Active&nbsp;</span>
+                                <Emoji symbol="✅" label="checked" />
+                            </Tag>
+                            <Tag color="purple" textColor="white">
+                                <span className="tagText">Improvement needed&nbsp;</span>
+                                <Emoji symbol="👷🏼‍♂️" label="constructing" />
+                            </Tag>
+                        </TagList>
+                    </RowBox>
+                    <ContentRowBox>
                         <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
-                        <hr className="separator" />
-                    </ColumnBox>
-                </CSSTransition>
-            </TransitionGroup>
+                        <CommentColumnBox>
+                            <div>3900 comments</div>
+                            <div>3000 views</div>
+                            <div>2020-02-22</div>
+                        </CommentColumnBox>
+                    </ContentRowBox>
+                    <hr className="separator" />
+                </ColumnBox>
+            </CSSTransition>
+        </TransitionGroup>
     )
 }
 
 export default PostList
 
 const TagList = styled.div`
+    align-self: flex-start;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
@@ -81,7 +90,7 @@ const Title = styled.div`
 
 const TagExcerpt = styled.div`
     color: #dee2e6;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.2rem;
 `
 
@@ -91,6 +100,22 @@ const ColumnBox = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 4rem;
+
+    padding: 30px 30px 0 30px;
+`
+
+const CommentColumnBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    text-align: right;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-left: 0.5rem;
+    font-size: 1.125rem;
+    div {
+        color: #ced4da;
+    }
 `
 
 const PostNumber = styled.div`
@@ -106,4 +131,8 @@ const RowBox = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 1rem;
+`
+
+const ContentRowBox = styled(RowBox)`
+    justify-content: space-between;
 `

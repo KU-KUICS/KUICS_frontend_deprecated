@@ -35,7 +35,7 @@ const ViewList = () => {
             <ScrollList className="noScroll">
                 {loading
                     ? fetchedData.map((posts, id) => (
-                          <LazyLoad key={id} overflow={true} throttle={100} height={200}>
+                          <LazyLoad key={id} overflow={true} throttle={100} height={100}>
                               {PostList(posts, id)}
                           </LazyLoad>
                       ))
@@ -47,22 +47,12 @@ const ViewList = () => {
 }
 
 const ScrollList = styled.div`
+    background-color: #262c34;
     display: flex;
     flex-direction: column;
     position: relative;
     flex: 1;
     overflow-y: scroll;
-    padding: 30px;
-    border-radius: 15px 15px 0 0px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
-    margin-bottom: 50px;
-`
-
-const ScrollList2 = styled.div`
-    position: relative;
-    flex: 1;
-    overflow-y: scroll;
-    padding: 30px;
     border-radius: 15px 15px 0 0px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
     margin-bottom: 50px;
