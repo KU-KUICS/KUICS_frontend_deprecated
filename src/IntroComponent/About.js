@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import fetching from '../Functions/fetching'
 
 import styled from 'styled-components'
@@ -26,12 +26,12 @@ const About = () => {
             {loading
                 ? fetchedData.map((contents, idx) => {
                       return (
-                          <>
-                              <h3 key={idx}>{contents.title}</h3>
+                          <Fragment key={idx}>
+                              <h3 key={50 + idx}>{contents.title}</h3>
                               {contents.content.map((paragraph, id) => {
-                                  return <p key={idx}>{paragraph}</p>
+                                  return <p key={100 * (idx + 1) + id}>{paragraph}</p>
                               })}
-                          </>
+                          </Fragment>
                       )
                   })
                 : 'Loading'}
