@@ -10,10 +10,10 @@ const Gnb = () => {
     return (
         <NavigatorList>
             <StyledLink to="/notice" onClick={clickEvent}>
-                <Navigator className="categoryNumber">0x00 /notice</Navigator>
+                <Navigator className="categoryNumber">0x00_/notice</Navigator>
             </StyledLink>
             <StyledLink to="/board" onClick={clickEvent}>
-                <Navigator className="categoryNumber">0x01 /board</Navigator>
+                <Navigator className="categoryNumber">0x01_/board</Navigator>
             </StyledLink>
         </NavigatorList>
     )
@@ -21,6 +21,15 @@ const Gnb = () => {
 
 const Navigator = styled.span`
     font-weight: 600;
+    &:hover,
+    &:focus {
+
+        color: lime;
+    }
+
+    &:active {
+        color: lime;
+    }
 `
 
 const NavigatorList = styled.ul`
@@ -37,19 +46,17 @@ const NavigatorList = styled.ul`
 const StyledLink = styled(Link)`
     position: relative;
     display: block;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease;
 
     &:hover,
-    &:active,
-    &:focus {
-        font-size: 1.5rem;
+    &:focus,
+    span:hover,
+    span:focus {
         color: lime;
     }
 
-    span:hover,
-    span:active,
-    span:focus {
-        font-size: 1.5rem;
+    &:active,
+    span:active {
         color: lime;
     }
 `

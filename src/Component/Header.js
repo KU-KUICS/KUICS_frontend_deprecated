@@ -11,27 +11,25 @@ const Header = () => {
     return pathname === '/' ? (
         ''
     ) : (
-        <>
-            <Shadow>
-                <RowBox>
-                    <SHeader>
-                        <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
-                        <Link to="/">
-                            <h1>KUICS</h1>
-                        </Link>
-                    </SHeader>
-                    <Gnb />
-                </RowBox>
-                <RowBox>
-                    <Title>
-                        <span style={{ color: 'lime' }}>{`.${pathname}`}</span>
-                    </Title>
-                    <Search>
-                        <SearchBar />
-                    </Search>
-                </RowBox>
-            </Shadow>
-        </>
+        <Shadow>
+            <RowBox>
+                <SHeader>
+                    <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
+                    <Link to="/">
+                        <h1>KUICS</h1>
+                    </Link>
+                </SHeader>
+                <Gnb />
+            </RowBox>
+            <RowBox>
+                <Title>
+                    <span style={{ color: 'lime' }}>{`.${pathname}`}</span>
+                </Title>
+                <Search>
+                    <SearchBar />
+                </Search>
+            </RowBox>
+        </Shadow>
     )
 }
 

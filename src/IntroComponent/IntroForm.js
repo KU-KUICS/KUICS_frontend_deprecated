@@ -51,8 +51,10 @@ const IntroForm = () => {
 }
 
 const StyledShrink = styled.div`
-    display: inline-box;
-
+    position: relative;
+    display: inline-block;
+    transform: translateX(-50%);
+    left: 50%;
     background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
