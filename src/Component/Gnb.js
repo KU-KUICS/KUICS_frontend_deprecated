@@ -10,15 +10,18 @@ const Gnb = () => {
     return (
         <NavigatorList>
             <StyledLink to="/notice" onClick={clickEvent}>
-                <span className="categoryNumber">0x00</span>
-                &nbsp;공지사항
+                <Navigator className="categoryNumber">0x00 /notice</Navigator>
             </StyledLink>
             <StyledLink to="/board" onClick={clickEvent}>
-                <span className="categoryNumber">0x01</span>&nbsp;게시판
+                <Navigator className="categoryNumber">0x01 /board</Navigator>
             </StyledLink>
         </NavigatorList>
     )
 }
+
+const Navigator = styled.span`
+    font-weight: 600;
+`
 
 const NavigatorList = styled.ul`
     text-align: left;

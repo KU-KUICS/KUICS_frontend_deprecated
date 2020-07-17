@@ -22,7 +22,7 @@ const Header = () => {
                 <Gnb />
                 <RowBox>
                     <Title>
-                        <span style={{ color: 'lime' }}>{pathname}</span>
+                        <span style={{ color: 'lime' }}>{`.${pathname}`}</span>
                     </Title>
                     <Search>
                         <SearchBar />
