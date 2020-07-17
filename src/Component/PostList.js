@@ -28,9 +28,9 @@ const PostList = (props, key) => {
                                 <span className="tagText">Active&nbsp;</span>
                                 <Emoji symbol="✅" label="checked" />
                             </Tag>
-                            <Tag color="skyblue" textColor="black">
-                                <span className="tagText">Enhancement Improved&nbsp;</span>
-                                <Emoji symbol="🚀" label="rocket" />
+                            <Tag color="purple" textColor="white">
+                                <span className="tagText">Improvement needed&nbsp;</span>
+                                <Emoji symbol="👷🏼‍♂️" label="constructing" />
                             </Tag>
                         </TagList>
                     </RowBox>

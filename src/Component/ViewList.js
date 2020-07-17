@@ -8,27 +8,27 @@ import LazyLoad from 'react-lazyload'
 
 const targetList = ['/notice', '/board']
 
-const ViewList = ({ position }) => {
+const ViewList = () => {
     const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState(false)
 
     let location = useLocation()
     let pathname = location.pathname
-
     const apiURL = `./dummy/${pathname}.json`
-    useEffect(() => {
-        fetchData(apiURL)
-    }, [])
 
-    const fetchData = async () => {
-        if (!targetList.includes(pathname)) {
-            throw new Error()
+    useEffect(() => {
+        const fetchFunction = async () => {
+            if (!targetList.includes(pathname)) {
+                throw new Error()
+            }
+
+            const fetched = await fetching(apiURL)
+            setFetch(fetched.boardList)
+            setLoading(true)
         }
 
-        const fetched = await fetching(apiURL)
-        setFetch(fetched.boardList)
-        setLoading(true)
-    }
+        fetchFunction(apiURL)
+    }, [apiURL])
 
     return (
         <>

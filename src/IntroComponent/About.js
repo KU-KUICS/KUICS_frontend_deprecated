@@ -17,7 +17,7 @@ const About = () => {
         setLoading(true)
     }
 
-    useEffect(() => {
+    useEffect((fetchData, apiURL) => {
         fetchData(apiURL)
     }, [])
 
