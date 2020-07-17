@@ -22,7 +22,7 @@ const About = () => {
     }, [])
 
     return (
-        <StyledWidth>
+        <StyledWidth state>
             {loading
                 ? fetchedData.map((contents, idx) => {
                       return (

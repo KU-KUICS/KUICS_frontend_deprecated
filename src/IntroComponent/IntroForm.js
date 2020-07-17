@@ -37,13 +37,10 @@ const IntroForm = () => {
                         </StyledRight>
                     </StyledCenter>
                 </RowLayout>
-                {aboutState ? (
-                    <StyledShrink>
-                        <About />
-                    </StyledShrink>
-                ) : (
-                    ''
-                )}
+                <StyledShrink state={aboutState}>
+                    {console.log(aboutState)}
+                    <About />
+                </StyledShrink>
             </ColumnLayout>
             <LoginModal isOpen={modalState} close={() => clickEvent(setModalState, modalState)} />
         </>
@@ -52,7 +49,7 @@ const IntroForm = () => {
 
 const StyledShrink = styled.div`
     position: relative;
-    display: inline-block;
+    display: ${props => (props.state ? 'inline-block' : 'none')};
     transform: translateX(-50%);
     left: 50%;
     background-color: #262c34;
