@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Gnb = () => {
+    const clickEvent = event => {
+        console.log(event.target)
+    }
+
     return (
         <NavigatorList>
-            <Link to="/notice">
-                <List>
-                    <span className="categoryNumber">0x00</span>&nbsp;공지사항
-                </List>
-            </Link>
-
-            <Link to="/board">
-                <List>
-                    <span className="categoryNumber">0x01</span>&nbsp;게시판
-                </List>
-            </Link>
+            <StyledLink to="/notice" onClick={clickEvent}>
+                <span className="categoryNumber">0x00</span>
+                &nbsp;공지사항
+            </StyledLink>
+            <StyledLink to="/board" onClick={clickEvent}>
+                <span className="categoryNumber">0x01</span>&nbsp;게시판
+            </StyledLink>
         </NavigatorList>
     )
 }
@@ -32,20 +32,23 @@ const NavigatorList = styled.ul`
     line-height: 2rem;
 `
 
-const List = styled.li`
+const StyledLink = styled(Link)`
     position: relative;
     display: block;
     transition: all 0.2s ease;
 
-    &:hover {
-        font-size: 1.5rem;
-        color: red;
-    }
-
+    &:hover,
     &:active,
     &:focus {
         font-size: 1.5rem;
-        color: red;
+        color: lime;
+    }
+
+    span:hover,
+    span:active,
+    span:focus {
+        font-size: 1.5rem;
+        color: lime;
     }
 `
 
