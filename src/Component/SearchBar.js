@@ -22,6 +22,8 @@ const SearchBar = () => {
 }
 
 const Bar = styled.input`
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
     width: 70%;
     max-width: 150px;
     background-color: rgba(0, 0, 0, 0);
