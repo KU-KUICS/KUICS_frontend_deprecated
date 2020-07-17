@@ -37,7 +37,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul {
     color: $text-color;
     margin: 0;
     padding: 0;
@@ -101,4 +102,3 @@ p {
     position: relative;
     top: 1rem;
 }
-
