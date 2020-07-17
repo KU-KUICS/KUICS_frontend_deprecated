@@ -24,8 +24,7 @@ const Navigator = styled.span`
 `
 
 const NavigatorList = styled.ul`
-    text-align: left;
-    position: absolute;
+    position: relative;
     padding-left: 2rem;
     padding-right: 1rem;
 
