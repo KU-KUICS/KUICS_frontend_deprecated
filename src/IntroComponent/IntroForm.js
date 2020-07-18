@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import About from './About'
 import LoginModal from './LoginModal'
 
 const IntroForm = () => {
-    const [aboutState, setAboutState] = useState(false)
     const [modalState, setModalState] = useState(false)
+    const [loading, reverseLoading] = useState(false)
 
     const clickEvent = (func, state) => {
         func(!state)
@@ -13,7 +13,7 @@ const IntroForm = () => {
 
     return (
         <>
-            <ColumnLayout>
+            <AbsoluteLayout>
                 <RowLayout>
                     <StyledCenterRightLine>
                         <img
@@ -30,18 +30,14 @@ const IntroForm = () => {
                             Korea University Institute of Computer Security
                         </h3>
                         <StyledRight>
-                            <span style={{ marginRight: '10px' }} onClick={() => clickEvent(setAboutState, aboutState)}>
-                                {'소개'}
-                            </span>
                             <span onClick={() => clickEvent(setModalState, modalState)}>로그인</span>
                         </StyledRight>
                     </StyledCenter>
                 </RowLayout>
-                <StyledShrink state={aboutState}>
-                    {console.log(aboutState)}
-                    <About />
+                <StyledShrink state={loading}>
+                    <About changeFunction={reverseLoading} />
                 </StyledShrink>
-            </ColumnLayout>
+            </AbsoluteLayout>
             <LoginModal isOpen={modalState} close={() => clickEvent(setModalState, modalState)} />
         </>
     )
@@ -49,33 +45,45 @@ const IntroForm = () => {
 
 const StyledShrink = styled.div`
     position: relative;
-    display: ${props => (props.state ? 'inline-block' : 'none')};
-    transform: translateX(-50%);
-    left: 50%;
+    display: block;
+
     background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-
     padding: 20px;
+
+    visibility: ${props => (props.state ? 'visible' : 'hidden')};
+    animation: ${props => (props.state ? fadeOut : fadeIn)} 0.7s linear;
+    transition: visibility 0.7s linear;
+
+    width: auto;
 
     margin-top: 10px;
     flex-shrink: 1;
     flex-basis: 0;
 `
 
-const ColumnLayout = styled.div`
+const fadeIn = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+`
+
+const fadeOut = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`
+const AbsoluteLayout = styled.div`
     padding: 30px;
-    position: absolute;
-    display: inline-block;
     width: fit-content;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    -webkit-align-item: center;
-    -webkit-justify-content: center;
 `
 
 const RowLayout = styled.div`
@@ -85,7 +93,7 @@ const RowLayout = styled.div`
     background-color: #262c34;
     border-radius: 15px;
     padding: 30px;
-    margin: 20px;
+    margin-bottom: 1rem;
 
     flex-shrink: 1;
     flex-basis: 0;
@@ -93,6 +101,7 @@ const RowLayout = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
     display: -webkit-flex;
     -webkit-align-item: center;
     -webkit-justify-content: center;
@@ -102,6 +111,8 @@ const StyledCenter = styled.div`
     h2 {
         font-size: 2rem;
     }
+    position: relative;
+    top: -5px;
     padding-left: 20px;
 `
 

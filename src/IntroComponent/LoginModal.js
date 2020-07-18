@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Modal/Modal.scss'
-import ViewList from '../Component/ViewList'
+import Context from '../Component/Context'
 
 const LoginModal = ({ isOpen, close }) => {
     return (
@@ -15,7 +15,7 @@ const LoginModal = ({ isOpen, close }) => {
                             <p>OAuth 이용한 로그인 방식</p>
                         </div>
                         <div className="button-wrap">
-                            <Link to="/notice" components={ViewList}>
+                            <Link to="/notice" components={Context}>
                                 <button> Confirm </button>
                             </Link>
                         </div>

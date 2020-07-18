@@ -48,14 +48,15 @@ const NavigatorList = styled.ul`
 const StyledLink = styled(Link)`
     position: relative;
     display: block;
-    transition: all 0.4s ease;
 
     .board {
-        color: ${props => (props.pathname === '/board' ? 'lime' : 'inherit')};
+        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/board') ? 'lime' : 'inherit')};
     }
 
     .notice {
-        color: ${props => (props.pathname === '/notice' ? 'lime' : 'inherit')};
+        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/notice') ? 'lime' : 'inherit')};
     }
 `
 

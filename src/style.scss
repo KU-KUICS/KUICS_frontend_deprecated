@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 
-$font-family: 'Montserrat', 'Noto Sans KR', 'Monaco', 'Inconsolata', sans-serif;
+$font-family: 'Montserrat', 'Noto Sans KR', 'Monaco', 'Inconsolata', sans-serif, Arial;
 $text-color: $oc-gray-2;
 
 * {
@@ -39,7 +39,8 @@ h3,
 h4,
 h5,
 h6,
-ul {
+ul,
+input {
     color: $text-color;
     margin: 0;
     padding: 0;
@@ -50,7 +51,7 @@ ul {
 h1,
 h2 {
     font-size: 2rem;
-    color: $oc-gray-1#edf0f3;
+    // color: $oc-gray-1#edf0f3;
 }
 
 a {
@@ -67,6 +68,14 @@ p {
     font-size: 1.725rem;
 }
 
+input:focus {
+    outline: 0;
+}
+
+input {
+    font-family: $font-family;
+}
+
 @media screen and (min-width: 768px) {
     html {
         font-size: 14px;
@@ -79,7 +88,7 @@ p {
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .tagText {
@@ -97,10 +106,9 @@ p {
 }
 
 .separator {
-    width: 80%;
+    width: 60%;
     border: rgba(255, 255, 255, 0.3) solid 1px;
     border-radius: 2px;
 
     position: relative;
-    top: 1rem;
 }
