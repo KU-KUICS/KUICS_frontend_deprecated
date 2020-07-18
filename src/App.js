@@ -4,8 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import IntroForm from './IntroComponent/IntroForm'
 import Header from './Component/Header'
-
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import ViewList from './Component/ViewList'
 
 const App = () => {
@@ -27,6 +26,7 @@ const Layout = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
     max-width: 800px;

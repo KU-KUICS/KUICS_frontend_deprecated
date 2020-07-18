@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import fetching from '../Functions/fetching'
-
+import Introform from './IntroForm'
 import styled from 'styled-components'
 
 const { REACT_APP_API_HOST } = process.env
 
-const About = () => {
+const About = props => {
     const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -16,6 +16,7 @@ const About = () => {
             const fetched = await fetching(apiURL)
             setFetch(fetched.introList)
             setLoading(true)
+            props.changeFunction(true)
         }
 
         fetchData(apiURL)

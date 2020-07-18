@@ -11,7 +11,7 @@ const Header = () => {
     return pathname === '/' ? (
         ''
     ) : (
-        <Shadow>
+        <Shadow className="Header">
             <RowBox>
                 <SHeader>
                     <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
@@ -19,46 +19,66 @@ const Header = () => {
                         <h1>KUICS</h1>
                     </Link>
                 </SHeader>
-                <Gnb />
-                <Search>
-                    <SearchBar />
-                </Search>
+                <ColumnBox>
+                    <RowBox>
+                        <Gnb />
+
+                        <ColumnBox>
+                            <Profile>hyp3rflow</Profile>
+                            <Logout>logout</Logout>
+                        </ColumnBox>
+                    </RowBox>
+                </ColumnBox>
             </RowBox>
         </Shadow>
     )
 }
 
-const Title = styled.h3`
-    font-size: 1.5rem;
+const Profile = styled.div`
+    align-self: flex-start;
+    font-size: 1.725rem;
+    font-weight: 600;
+`
+
+const Logout = styled(Profile)`
+    color: red;
 `
 
 const RowBox = styled.div`
     display: flex;
     align-items: center;
+    width: 100%;
 `
 
-const Search = styled.div`
+const ColumnBox = styled(RowBox)`
+    flex-direction: column;
+    align-self: flex-start;
     flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 0;
 
-    text-align: right;
-    font-size: 1.5rem;
-
-    align-self: flex-end;
+    div {
+        align-self: flex-end;
+    }
 `
 
+//
 const Shadow = styled.div`
+    display: block;
     background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 15px 15px;
-    margin-bottom: 15px;
     padding: 2rem;
+    width: -webkit-fill-available;
 `
 
 const SHeader = styled.header`
-    display: inline-block;
+    display: block;
     h1 {
         font-size: 2rem;
     }
+
+    align-self: flex-start;
 `
 
 export default Header
