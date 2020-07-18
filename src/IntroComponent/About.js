@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import fetching from '../Functions/fetching'
-import Introform from './IntroForm'
 import styled from 'styled-components'
 
 const { REACT_APP_API_HOST } = process.env
