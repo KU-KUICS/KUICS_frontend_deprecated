@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Gnb = () => {
@@ -7,13 +7,17 @@ const Gnb = () => {
         console.log(event.target)
     }
 
+    let location = useLocation()
+    let pathname = location.pathname
+    console.log(pathname)
+
     return (
         <NavigatorList>
-            <StyledLink to="/notice" onClick={clickEvent}>
-                <Navigator className="categoryNumber">0x00 /notice</Navigator>
+            <StyledLink to="/notice" onClick={clickEvent} pathname={pathname}>
+                <Navigator className="categoryNumber notice">notice</Navigator>
             </StyledLink>
-            <StyledLink to="/board" onClick={clickEvent}>
-                <Navigator className="categoryNumber">0x01 /board</Navigator>
+            <StyledLink to="/board" onClick={clickEvent} pathname={pathname}>
+                <Navigator className="categoryNumber board">board</Navigator>
             </StyledLink>
         </NavigatorList>
     )
@@ -21,6 +25,11 @@ const Gnb = () => {
 
 const Navigator = styled.span`
     font-weight: 600;
+    &:hover,
+    &:focus,
+    &:active {
+        color: lime;
+    }
 `
 
 const NavigatorList = styled.ul`
@@ -32,25 +41,21 @@ const NavigatorList = styled.ul`
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2rem;
+
+    align-self: flex-start;
 `
 
 const StyledLink = styled(Link)`
     position: relative;
     display: block;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease;
 
-    &:hover,
-    &:active,
-    &:focus {
-        font-size: 1.5rem;
-        color: lime;
+    .board {
+        color: ${props => (props.pathname === '/board' ? 'lime' : 'inherit')};
     }
 
-    span:hover,
-    span:active,
-    span:focus {
-        font-size: 1.5rem;
-        color: lime;
+    .notice {
+        color: ${props => (props.pathname === '/notice' ? 'lime' : 'inherit')};
     }
 `
 
