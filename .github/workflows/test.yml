@@ -1,0 +1,13 @@
+name: Test Pull Request
+on: [pull_request]
+
+jobs:
+    docker-image:
+      runs-on: ubuntu-latest
+      name: Test PR
+      steps:
+      - uses: actions/checkout@v1
+      - name: Generate .env file
+        runs: echo -e "${{secrets.ENV}}" > ~/.env.local
+      - name: Run Server and Test
+        runs: yarn install && yarn build && yarn serve && sleep 30 && wget localhost:5000
