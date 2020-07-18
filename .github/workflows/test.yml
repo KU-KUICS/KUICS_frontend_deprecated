@@ -6,7 +6,8 @@ jobs:
       runs-on: ubuntu-latest
       name: Test PR
       steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Generate .env file
         runs: echo -e "${{secrets.ENV}}" > ~/.env.local
       - name: Run Server and Test
