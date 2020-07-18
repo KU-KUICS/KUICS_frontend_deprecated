@@ -1,7 +1,6 @@
 import React, { createRef, forwardRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import styled from 'styled-components'
-import ReactTags from 'react-tag-autocomplete'
 
 import './SearchBar.scss'
 
