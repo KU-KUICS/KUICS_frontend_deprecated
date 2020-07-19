@@ -13,6 +13,9 @@ const App = () => {
     return (
         <>
             <Router>
+                <div style={{ display: 'none' }}>
+                    <DarkModeToggle />
+                </div>
                 <Layout className="Layout">
                     <Header />
                     <Route exact path="/" component={IntroForm} />

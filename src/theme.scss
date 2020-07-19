@@ -126,4 +126,10 @@ body.dark-mode {
     .Logout {
         color: red;
     }
+
+    .tagText,
+    .Introduction > h1,
+    .Introduction > p {
+        color: white !important;
+    }
 }

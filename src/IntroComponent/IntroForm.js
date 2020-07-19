@@ -46,14 +46,13 @@ const IntroForm = () => {
 }
 
 const IntroBox = styled.div`
-    padding-top: 1rem;
     max-width: 800px;
     width: 100%;
     height: 100%;
     flex-shrink: 1;
     text-align: center;
     border-radius: 50px;
-    background: url(./static/intro-bg.jpg) no-repeat;
+
     background-position: 50% 35%;
 
     div {
