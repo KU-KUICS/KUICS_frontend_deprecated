@@ -27,14 +27,13 @@ export default DarkModeToggle
 
 const ToggleButton = styled.div`
     position: relative;
-`
 
-const ButtonDesign = styled.button`
-    border: 0;
-    outline: 0;
-
-    background-color: ${props => props.color};
-
-    width: 2rem;
-    height: 2rem;
+    &,
+    &:focus,
+    &:active {
+        background: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0;
+    }
 `
