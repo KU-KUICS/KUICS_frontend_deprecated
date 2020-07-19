@@ -100,8 +100,7 @@ const ColumnBox = styled.div`
     flex-direction: column;
     min-height: 4rem;
 
-    padding: 2rem;
-    padding-top: 1.5rem;
+    padding: 3rem;
     padding-bottom: 0;
 `
 
@@ -123,8 +122,6 @@ const CommentColumnBox = styled.div`
 const PostNumber = styled.div`
     min-width: 1.8rem;
     font-size: 1.1rem;
-    align-self: flex-start;
-    padding-top: 0.4rem;
 `
 
 const RowBox = styled.div`
@@ -132,6 +129,7 @@ const RowBox = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 1rem;
+    justify-content: center;
 `
 
 const ContentRowBox = styled(RowBox)`

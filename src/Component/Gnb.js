@@ -24,7 +24,6 @@ const Gnb = () => {
 }
 
 const Navigator = styled.span`
-    font-weight: 600;
     &:hover,
     &:focus,
     &:active {
@@ -34,15 +33,18 @@ const Navigator = styled.span`
 
 const NavigatorList = styled.ul`
     position: relative;
-    padding-left: 2rem;
-    padding-right: 1rem;
 
     display: inline-block;
-    font-weight: 500;
-    font-size: 1.4rem;
     line-height: 2rem;
+    padding-left: 1rem;
+    margin-left: 1px;
+    border-left: black 1px solid;
 
     align-self: flex-start;
+
+    a {
+        text-align: left;
+    }
 `
 
 const StyledLink = styled(Link)`
@@ -50,13 +52,13 @@ const StyledLink = styled(Link)`
     display: block;
 
     .board {
-        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/board') ? 'lime' : 'inherit')};
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/board') ? '#3b1efe' : 'inherit')};
     }
 
     .notice {
-        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/notice') ? 'lime' : 'inherit')};
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/notice') ? '#3b1efe' : 'inherit')};
     }
 `
 

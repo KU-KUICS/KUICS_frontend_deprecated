@@ -13,7 +13,7 @@ const Header = () => {
     ) : (
         <Shadow className="Header">
             <RowBox>
-                <SHeader>
+                <SHeader className>
                     <img className="logo" alt="KUICS logo" style={{ width: '4rem' }} src="./static/kuics-logo.svg" />
                     <Link to="/">
                         <h1>KUICS</h1>
@@ -35,12 +35,12 @@ const Header = () => {
 }
 
 const Profile = styled.div`
-    align-self: flex-start;
-    font-size: 1.4rem;
+    font-size: 1.725rem;
     font-weight: 600;
 `
 
 const Logout = styled(Profile)`
+    font-size: 1.4rem;
     color: red;
 `
 
@@ -52,23 +52,21 @@ const RowBox = styled.div`
 
 const ColumnBox = styled(RowBox)`
     flex-direction: column;
+    display: inline-block;
     align-self: flex-start;
+    text-align: right;
+
     flex-grow: 1;
     flex-basis: 0;
     flex-shrink: 0;
-
-    div {
-        align-self: flex-end;
-    }
 `
 
 //background-color: #262c34;
 //
 const Shadow = styled.div`
     display: block;
-    border-radius: 50px;
-    padding: 2rem;
-    margin-top: 2rem;
+    border-radius: 0 0 50px 50px;
+    padding: 3rem;
     width: -webkit-fill-available;
 `
 
@@ -80,6 +78,10 @@ const SHeader = styled.header`
 
     text-align: center;
     align-self: flex-start;
+
+    padding: 1rem;
+    padding-top: 0;
+    border-radius: 2rem;
 `
 
 export default Header

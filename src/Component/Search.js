@@ -26,14 +26,11 @@ const AdvancedSearch = styled.div`
 `
 
 const Write = styled.div`
-    padding: 1rem 0 1rem 2rem;
     font-size: 1.5rem;
     font-weight: 600;
 `
 
 const StyledSearch = styled.span`
-    padding: 1rem 2rem 1rem 0;
-
     flex-grow: 1;
     flex-basis: 0;
 
@@ -44,6 +41,8 @@ const StyledSearch = styled.span`
 const RowBox = styled.div`
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: center;
+    width: -webkit-fill-available;
+    width: fill-available;
+    padding: 2rem;
 `

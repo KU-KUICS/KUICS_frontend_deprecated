@@ -21,6 +21,7 @@ const ScrollList = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
+
     overflow-y: scroll;
     border-radius: 50px 50px 0 0;
 
