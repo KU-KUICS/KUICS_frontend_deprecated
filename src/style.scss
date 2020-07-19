@@ -115,3 +115,102 @@ input {
 
     position: relative;
 }
+
+//@extend
+
+body.dark-mode-animate hr {
+    transition: background 0.3s;
+}
+
+body.dark-mode hr {
+    background: #424242;
+}
+
+#dmtoggle {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    opacity: 0.25;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.15s;
+}
+
+body.dark-mode #dmtoggle {
+    transform: rotate(-45deg);
+}
+
+#dmtoggle:hover {
+    opacity: 1;
+}
+
+#dmtoggle div {
+    position: absolute;
+    background: #424242;
+    transition: transform 0.3s, background 0.3s, opacity 0.3s;
+}
+
+body.dark-mode #dmtoggle div {
+    background: #f5f5f5;
+}
+
+#dmtoggle .arc,
+#dmtoggle .darc {
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+}
+
+body.dark-mode #dmtoggle .arc {
+    transform: scale(1.2);
+}
+
+#dmtoggle .darc {
+    background: #f5f5f5;
+    transform: translateX(24px);
+}
+
+body.dark-mode #dmtoggle .darc {
+    transform: translateX(6px);
+    background: #212121;
+}
+
+#dmtoggle .ray {
+    width: 6px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+#dmtoggle .ray.one {
+    transform: rotate(0deg) translateX(14px);
+}
+#dmtoggle .ray.two {
+    transform: rotate(45deg) translateX(14px);
+}
+#dmtoggle .ray.three {
+    transform: rotate(90deg) translateX(14px);
+}
+#dmtoggle .ray.four {
+    transform: rotate(135deg) translateX(14px);
+}
+#dmtoggle .ray.five {
+    transform: rotate(180deg) translateX(14px);
+}
+#dmtoggle .ray.six {
+    transform: rotate(225deg) translateX(14px);
+}
+#dmtoggle .ray.seven {
+    transform: rotate(270deg) translateX(14px);
+}
+#dmtoggle .ray.eight {
+    transform: rotate(315deg) translateX(14px);
+}
+
+body.dark-mode #dmtoggle .ray {
+    transform: scaleX(0.01);
+    opacity: 0;
+}
