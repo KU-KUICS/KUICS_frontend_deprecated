@@ -114,7 +114,7 @@ const RowLayout = styled.div`
     margin: 0 1.5rem 2rem 1.5rem;
 
     flex-shrink: 1;
-    flex-basis: 0;
+    flex-basis: 1;
 
     display: flex;
     align-items: center;
