@@ -13,10 +13,10 @@ const Gnb = () => {
 
     return (
         <NavigatorList className="leftBorder">
-            <StyledLink to="/notice" onClick={clickEvent} pathname={pathname}>
+            <StyledLink className="noticeLink" to="/notice" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber notice">notice</Navigator>
             </StyledLink>
-            <StyledLink to="/board" onClick={clickEvent} pathname={pathname}>
+            <StyledLink className="boardLink" to="/board" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber board">board</Navigator>
             </StyledLink>
         </NavigatorList>
@@ -52,12 +52,12 @@ const StyledLink = styled(Link)`
 
     .board {
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/board') ? 'yellow' : 'inherit')};
+        color: ${props => (props.pathname.includes('/board') ? 'coral' : 'inherit')};
     }
 
     .notice {
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/notice') ? 'yellow' : 'inherit')};
+        color: ${props => (props.pathname.includes('/notice') ? 'coral' : 'inherit')};
     }
 `
 

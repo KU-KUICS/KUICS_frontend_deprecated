@@ -16,6 +16,7 @@ body {
     // background-color: #1b1f25;
     font-family: $font-family;
     // color: $text-color;
+    transition: color 20s ease;
 }
 
 html,
@@ -41,7 +42,7 @@ h5,
 h6,
 ul,
 input {
-    // color: $text-color;
+    color: $text-color;
     margin: 0;
     padding: 0;
     line-break: normal;
@@ -108,7 +109,6 @@ input {
 
 .separator {
     width: 60%;
-    border: rgba(255, 255, 255, 0.3) solid 1px;
     border-radius: 2px;
     padding: 0;
     margin: 0 auto;

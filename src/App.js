@@ -7,17 +7,20 @@ import IntroForm from './IntroComponent/IntroForm'
 import Header from './Component/Header'
 import styled from 'styled-components'
 import ViewList from './Component/ViewList'
+import DarkModeToggle from './DarkModeToggle'
 
 const App = () => {
     return (
-        <Router>
-            <Layout className="Layout">
-                <Header />
-                <Route exact path="/" component={IntroForm} />
-                <Route path="/notice" component={ViewList} />
-                <Route path="/board" component={ViewList} />
-            </Layout>
-        </Router>
+        <>
+            <Router>
+                <Layout className="Layout">
+                    <Header />
+                    <Route exact path="/" component={IntroForm} />
+                    <Route path="/notice" component={ViewList} />
+                    <Route path="/board" component={ViewList} />
+                </Layout>
+            </Router>
+        </>
     )
 }
 

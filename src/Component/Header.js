@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Gnb'
 import SearchBar from './SearchBar'
+import DarkModeToggle from '../DarkModeToggle'
 
 const Header = () => {
     let location = useLocation()
@@ -25,7 +26,8 @@ const Header = () => {
 
                         <ColumnBox>
                             <Profile>hyp3rflow</Profile>
-                            <Logout>logout</Logout>
+                            <Logout className="Logout">logout</Logout>
+                            <DarkModeToggle />
                         </ColumnBox>
                     </RowBox>
                 </ColumnBox>
