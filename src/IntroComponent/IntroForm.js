@@ -14,28 +14,30 @@ const IntroForm = () => {
     return (
         <>
             <AbsoluteLayout>
-                <RowLayout>
+                <RowLayout className="Header">
                     <StyledCenterRightLine>
                         <img
                             className="logo"
                             alt="KUICS logo"
-                            style={{ width: '6rem' }}
+                            style={{
+                                width: '6rem',
+                            }}
                             src="./static/kuics-logo.svg"
                         />
                         <h1>KUICS</h1>
                     </StyledCenterRightLine>
                     <StyledCenter>
                         <h2>고려대학교 컴퓨터학과 정보보호학회</h2>
-                        <h3 style={{ color: '#e4e7eb', fontWeight: '400' }}>
-                            Korea University Institute of Computer Security
-                        </h3>
+                        <h3 style={{ fontWeight: '400' }}>Korea University Institute of Computer Security</h3>
                         <StyledRight>
                             <span onClick={() => clickEvent(setModalState, modalState)}>로그인</span>
                         </StyledRight>
                     </StyledCenter>
                 </RowLayout>
-                <StyledShrink state={loading}>
-                    <About changeFunction={reverseLoading} />
+                <StyledShrink state={loading} className="Introduction">
+                    <IntroBox>
+                        <About changeFunction={reverseLoading} />
+                    </IntroBox>
                 </StyledShrink>
             </AbsoluteLayout>
             <LoginModal isOpen={modalState} close={() => clickEvent(setModalState, modalState)} />
@@ -43,24 +45,39 @@ const IntroForm = () => {
     )
 }
 
+const IntroBox = styled.div`
+    padding-top: 1rem;
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
+    text-align: center;
+    border-radius: 50px;
+    background: url(./static/intro-bg.jpg) no-repeat;
+    background-position: 50% 35%;
+
+    div {
+        color: white;
+    }
+`
+
+// background-color: #262c34;
 const StyledShrink = styled.div`
     position: relative;
-    display: block;
+    flex-direction: column;
+    align-items: center;
 
-    background-color: #262c34;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    padding: 20px;
+    margin: 0 1rem;
+
+    border-radius: 50px;
 
     visibility: ${props => (props.state ? 'visible' : 'hidden')};
     animation: ${props => (props.state ? fadeOut : fadeIn)} 0.7s linear;
     transition: visibility 0.7s linear;
 
-    width: auto;
+    height: fit-content;
 
-    margin-top: 10px;
-    flex-shrink: 1;
-    flex-basis: 0;
+    align-self: stretch;
 `
 
 const fadeIn = keyframes`
@@ -81,19 +98,20 @@ const fadeOut = keyframes`
     }
 `
 const AbsoluteLayout = styled.div`
-    padding: 30px;
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
     align-items: center;
+    justify-content: center;
+    z-index: -1;
 `
 
+// background-color: #262c34;
 const RowLayout = styled.div`
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
     position: relative;
-    background-color: #262c34;
-    border-radius: 15px;
     padding: 30px;
-    margin-bottom: 1rem;
+    margin: 0 1rem 2rem 1rem;
 
     flex-shrink: 1;
     flex-basis: 0;
@@ -105,6 +123,9 @@ const RowLayout = styled.div`
     display: -webkit-flex;
     -webkit-align-item: center;
     -webkit-justify-content: center;
+
+    border-radius: 50px;
+    align-self: stretch;
 `
 
 const StyledCenter = styled.div`

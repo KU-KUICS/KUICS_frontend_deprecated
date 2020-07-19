@@ -26,13 +26,13 @@ const AdvancedSearch = styled.div`
 `
 
 const Write = styled.div`
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 2rem;
     font-size: 1.5rem;
     font-weight: 600;
 `
 
 const StyledSearch = styled.span`
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 2rem 1rem 0;
 
     flex-grow: 1;
     flex-basis: 0;

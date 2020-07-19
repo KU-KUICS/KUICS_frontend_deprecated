@@ -27,7 +27,7 @@ const About = props => {
                 ? fetchedData.map((contents, idx) => {
                       return (
                           <Fragment key={idx}>
-                              <h3 key={50 + idx}>{contents.title}</h3>
+                              <h1 key={50 + idx}>{contents.title}</h1>
                               {contents.content.map((paragraph, id) => {
                                   return <p key={100 * (idx + 1) + id}>{paragraph}</p>
                               })}
@@ -40,9 +40,13 @@ const About = props => {
 }
 
 const StyledWidth = styled.div`
-    max-width: 760px;
+    padding: 2rem;
+    h1,
+    p {
+        color: white;
+    }
 
-    h3:nth-of-type(n + 2) {
+    h1:nth-of-type(n + 2) {
         padding-top: 2rem;
     }
 `

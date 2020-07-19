@@ -20,11 +20,12 @@ const SearchBar = () => {
         </>
     )
 }
+//background - color: #262c34;
+
 const Bar = styled.input`
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 2rem;
-    background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     outline: none;
     border: none;

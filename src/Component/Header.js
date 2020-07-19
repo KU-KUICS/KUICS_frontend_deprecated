@@ -14,7 +14,7 @@ const Header = () => {
         <Shadow className="Header">
             <RowBox>
                 <SHeader>
-                    <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
+                    <img className="logo" alt="KUICS logo" style={{ width: '4rem' }} src="./static/kuics-logo.svg" />
                     <Link to="/">
                         <h1>KUICS</h1>
                     </Link>
@@ -36,7 +36,7 @@ const Header = () => {
 
 const Profile = styled.div`
     align-self: flex-start;
-    font-size: 1.725rem;
+    font-size: 1.4rem;
     font-weight: 600;
 `
 
@@ -62,13 +62,13 @@ const ColumnBox = styled(RowBox)`
     }
 `
 
+//background-color: #262c34;
 //
 const Shadow = styled.div`
     display: block;
-    background-color: #262c34;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 15px 15px;
+    border-radius: 50px;
     padding: 2rem;
+    margin-top: 2rem;
     width: -webkit-fill-available;
 `
 
@@ -78,6 +78,7 @@ const SHeader = styled.header`
         font-size: 2rem;
     }
 
+    text-align: center;
     align-self: flex-start;
 `
 

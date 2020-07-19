@@ -1,0 +1,60 @@
+@mixin theme(
+    $bgcolor: #1b1f25,
+    $fontcolor: #e9ecef,
+    $cardcolor: #1b1f25,
+    $sh1color: #111418,
+    $sh2color: #252a32,
+    $theme: 0
+) {
+    body {
+        background-color: $bgcolor;
+        color: $fontcolor;
+    }
+
+    .Header,
+    .Introduction,
+    .ViewList,
+    .Bar {
+        //background-color: #262c34;
+        background-color: $cardcolor;
+        box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color;
+    }
+
+    .card {
+        color: $fontcolor;
+    }
+
+    body,
+    a,
+    div,
+    span,
+    small,
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    input {
+        color: $fontcolor;
+        margin: 0;
+        padding: 0;
+        line-break: normal;
+        word-break: keep-all;
+    }
+
+    .logo {
+        filter: invert($theme);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    @include theme();
+}
+
+@media (prefers-color-scheme: dark) {
+    @include theme(white, #181818, #f8f9fa, #d0d1d2, #ffffff, 1);
+}
