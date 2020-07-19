@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+import DarkModeToggle from '../DarkModeToggle'
 import About from './About'
 import LoginModal from './LoginModal'
 
@@ -14,6 +15,9 @@ const IntroForm = () => {
     return (
         <>
             <AbsoluteLayout>
+                <TmpBox>
+                    <DarkModeToggle />
+                </TmpBox>
                 <RowLayout className="Header">
                     <StyledCenterRightLine>
                         <img
@@ -38,12 +42,22 @@ const IntroForm = () => {
                     <IntroBox>
                         <About changeFunction={reverseLoading} />
                     </IntroBox>
-                </StyledShrink>
+                </StyledShrink>{' '}
             </AbsoluteLayout>
             <LoginModal isOpen={modalState} close={() => clickEvent(setModalState, modalState)} />
         </>
     )
 }
+
+const TmpBox = styled.div`
+    display: inline-block;
+    margin-bottom: 4rem;
+    text-align: right;
+    width: 100%;
+    left: -1rem;
+    top: -2rem;
+    position: relative;
+`
 
 const IntroBox = styled.div`
     max-width: 800px;
