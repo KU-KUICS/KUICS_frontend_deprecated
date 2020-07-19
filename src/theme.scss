@@ -25,6 +25,14 @@ body.dark-mode {
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
     }
 
+    .Modal {
+        background-color: #262c34;
+
+        .content > .title {
+            color: $fontcolor;
+        }
+    }
+
     .card {
         color: $fontcolor;
     }
@@ -106,6 +114,14 @@ body.light-mode {
     ul,
     input {
         color: $fontcolor;
+    }
+
+    .Modal {
+        background-color: $cardcolor;
+
+        .content .title {
+            color: $fontcolor;
+        }
     }
 
     .logo {
