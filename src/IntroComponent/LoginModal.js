@@ -14,7 +14,7 @@ const LoginModal = ({ isOpen, close }) => {
                 <>
                     <div className="Modal-overlay" onClick={close} />
                     <div className="Modal">
-                        <p className="title">KUICS LOGIN</p>
+                        <p className="title">Login KUICS</p>
                         <div className="content">
                             <a href={apiURL}>
                                 <img

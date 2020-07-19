@@ -15,7 +15,6 @@
     transform: translate(-50%, -50%);
     width: 320px;
     border-radius: 10px;
-    background-color: #262c34;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     & > * {
         &:first-child {
@@ -28,7 +27,7 @@
         padding-left: 8px;
         font-size: 16pt;
         font-weight: bold;
-        color: $oc-gray-1;
+        text-align: center;
     }
     .content {
         border-top: 1px solid #bebebe;
@@ -36,7 +35,7 @@
         p {
             padding: 8px;
             font-size: 12pt;
-            color: $oc-gray-1;
+            // color: $oc-gray-1;
         }
     }
 
