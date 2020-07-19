@@ -67,7 +67,7 @@ const StyledShrink = styled.div`
     flex-direction: column;
     align-items: center;
 
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 
     border-radius: 50px;
 
@@ -111,7 +111,7 @@ const AbsoluteLayout = styled.div`
 const RowLayout = styled.div`
     position: relative;
     padding: 30px;
-    margin: 0 1rem 2rem 1rem;
+    margin: 0 1.5rem 2rem 1.5rem;
 
     flex-shrink: 1;
     flex-basis: 0;

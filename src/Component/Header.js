@@ -66,7 +66,7 @@ const ColumnBox = styled(RowBox)`
 const Shadow = styled.div`
     display: block;
     border-radius: 0 0 50px 50px;
-    padding: 3rem;
+    padding: 2.25rem;
     width: -webkit-fill-available;
 `
 

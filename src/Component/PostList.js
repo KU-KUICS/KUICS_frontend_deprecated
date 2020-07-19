@@ -100,7 +100,7 @@ const ColumnBox = styled.div`
     flex-direction: column;
     min-height: 4rem;
 
-    padding: 3rem;
+    padding: 2.25rem;
     padding-bottom: 0;
 `
 
