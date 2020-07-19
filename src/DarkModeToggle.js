@@ -30,7 +30,10 @@ const ToggleButton = styled.div`
 
     &,
     &:focus,
-    &:active {
+    &:active,
+    &:hover,
+    &:visited,
+    &:active:focus {
         background: none;
         outline: none;
         box-shadow: none;
