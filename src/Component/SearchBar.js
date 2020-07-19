@@ -32,11 +32,10 @@ const Bar = styled.input`
     height: 2.5rem;
     font-size: 1.3rem;
     font-weight: 500;
-    color: white;
     position: relative;
     padding: 0 1rem 0 1rem;
 
-    width: 30%;
+    width: 40%;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
     animation-fill-mode: forwards;
