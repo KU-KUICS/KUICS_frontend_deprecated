@@ -11,3 +11,5 @@ jobs:
         run: echo -e "${{secrets.ENV}}" > ~/.env.local
       - name: Run Server and Test
         run: yarn install && yarn build && yarn serve && sleep 30 && wget localhost:5000
+        env:
+          CI: false
