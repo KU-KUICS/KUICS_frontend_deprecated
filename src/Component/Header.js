@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Gnb'
 import SearchBar from './SearchBar'
+import DarkModeToggle from '../DarkModeToggle'
 
 const Header = () => {
     let location = useLocation()
@@ -13,8 +14,8 @@ const Header = () => {
     ) : (
         <Shadow className="Header">
             <RowBox>
-                <SHeader>
-                    <img alt="KUICS logo" style={{ width: '6rem' }} src="./static/kuics-logo.svg" />
+                <SHeader className>
+                    <img className="logo" alt="KUICS logo" style={{ width: '4rem' }} src="./static/kuics-logo.svg" />
                     <Link to="/">
                         <h1>KUICS</h1>
                     </Link>
@@ -25,7 +26,8 @@ const Header = () => {
 
                         <ColumnBox>
                             <Profile>hyp3rflow</Profile>
-                            <Logout>logout</Logout>
+                            <Logout className="Logout">logout</Logout>
+                            <DarkModeToggle />
                         </ColumnBox>
                     </RowBox>
                 </ColumnBox>
@@ -35,12 +37,12 @@ const Header = () => {
 }
 
 const Profile = styled.div`
-    align-self: flex-start;
     font-size: 1.725rem;
     font-weight: 600;
 `
 
 const Logout = styled(Profile)`
+    font-size: 1.4rem;
     color: red;
 `
 
@@ -52,23 +54,21 @@ const RowBox = styled.div`
 
 const ColumnBox = styled(RowBox)`
     flex-direction: column;
+    display: inline-block;
     align-self: flex-start;
+    text-align: right;
+
     flex-grow: 1;
     flex-basis: 0;
     flex-shrink: 0;
-
-    div {
-        align-self: flex-end;
-    }
 `
 
+//background-color: #262c34;
 //
 const Shadow = styled.div`
     display: block;
-    background-color: #262c34;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 15px 15px;
-    padding: 2rem;
+    border-radius: 0 0 50px 50px;
+    padding: 2.25rem;
     width: -webkit-fill-available;
 `
 
@@ -78,7 +78,12 @@ const SHeader = styled.header`
         font-size: 2rem;
     }
 
+    text-align: center;
     align-self: flex-start;
+
+    padding: 1rem;
+    padding-top: 0;
+    border-radius: 2rem;
 `
 
 export default Header

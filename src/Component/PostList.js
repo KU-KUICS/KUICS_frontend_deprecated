@@ -11,7 +11,6 @@ const PostList = (props, key) => {
     const ID = props.boardNo
     const title = props.title
     const Excerpt = props.excerpt
-    
 
     const pageTrans = 'trans'
     const classNames = {
@@ -82,14 +81,14 @@ const Tag = styled.div`
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 `
 
+//color: #f8f9fa;
 const Title = styled.div`
-    color: #f8f9fa;
     font-weight: 600;
     font-size: 1.5rem;
 `
 
+//color: #dee2e6;
 const TagExcerpt = styled.div`
-    color: #dee2e6;
     font-weight: 400;
     font-size: 1.2rem;
 `
@@ -101,7 +100,8 @@ const ColumnBox = styled.div`
     flex-direction: column;
     min-height: 4rem;
 
-    padding: 30px 30px 0 30px;
+    padding: 2.25rem;
+    padding-bottom: 0;
 `
 
 const CommentColumnBox = styled.div`
@@ -114,16 +114,14 @@ const CommentColumnBox = styled.div`
     padding-left: 0.5rem;
     font-size: 1.125rem;
     div {
-        color: #ced4da;
     }
 `
+//color: #ced4da;
 
+// color: #ced4da;
 const PostNumber = styled.div`
-    color: #ced4da;
     min-width: 1.8rem;
     font-size: 1.1rem;
-    align-self: flex-start;
-    padding-top: 0.4rem;
 `
 
 const RowBox = styled.div`
@@ -131,6 +129,7 @@ const RowBox = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 1rem;
+    justify-content: center;
 `
 
 const ContentRowBox = styled(RowBox)`

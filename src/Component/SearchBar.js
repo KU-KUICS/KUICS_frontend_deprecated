@@ -16,26 +16,26 @@ const SearchBar = () => {
     return (
         <>
             <BarComponent className={'Bar'} ref={ref} />
-            <FiSearch style={{ top: '2px', position: 'relative', paddingLeft: '1rem' }} onClick={debug} />
+            <FiSearch style={{ top: '4px', position: 'relative', paddingLeft: '1rem' }} onClick={debug} />
         </>
     )
 }
+//background - color: #262c34;
+
 const Bar = styled.input`
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 2rem;
-    background-color: #262c34;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     outline: none;
     border: none;
-    height: 2rem;
+    height: 2.5rem;
     font-size: 1.3rem;
     font-weight: 500;
-    color: white;
     position: relative;
     padding: 0 1rem 0 1rem;
 
-    width: 30%;
+    width: 40%;
     animation-delay: 2s;
     -webkit-animation-delay: 2s;
     animation-fill-mode: forwards;

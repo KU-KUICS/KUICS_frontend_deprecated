@@ -12,11 +12,11 @@ const Gnb = () => {
     console.log(pathname)
 
     return (
-        <NavigatorList>
-            <StyledLink to="/notice" onClick={clickEvent} pathname={pathname}>
+        <NavigatorList className="leftBorder">
+            <StyledLink className="noticeLink" to="/notice" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber notice">notice</Navigator>
             </StyledLink>
-            <StyledLink to="/board" onClick={clickEvent} pathname={pathname}>
+            <StyledLink className="boardLink" to="/board" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber board">board</Navigator>
             </StyledLink>
         </NavigatorList>
@@ -24,7 +24,6 @@ const Gnb = () => {
 }
 
 const Navigator = styled.span`
-    font-weight: 600;
     &:hover,
     &:focus,
     &:active {
@@ -34,15 +33,17 @@ const Navigator = styled.span`
 
 const NavigatorList = styled.ul`
     position: relative;
-    padding-left: 2rem;
-    padding-right: 1rem;
 
     display: inline-block;
-    font-weight: 500;
-    font-size: 1.4rem;
     line-height: 2rem;
+    padding-left: 1rem;
+    margin-left: 1px;
 
     align-self: flex-start;
+
+    a {
+        text-align: left;
+    }
 `
 
 const StyledLink = styled(Link)`
@@ -50,13 +51,13 @@ const StyledLink = styled(Link)`
     display: block;
 
     .board {
-        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/board') ? 'lime' : 'inherit')};
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/board') ? 'coral' : 'inherit')};
     }
 
     .notice {
-        transition: all 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
-        color: ${props => (props.pathname.includes('/notice') ? 'lime' : 'inherit')};
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+        color: ${props => (props.pathname.includes('/notice') ? 'coral' : 'inherit')};
     }
 `
 

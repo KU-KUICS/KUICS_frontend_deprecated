@@ -1,0 +1,139 @@
+body.dark-mode {
+    $bgcolor: #1b1f25;
+    $fontcolor: #e9ecef;
+    $cardcolor: #1b1f25;
+    $sh1color: #111418;
+    $sh2color: #252a32;
+    $theme: 0;
+
+    background-color: $bgcolor;
+    transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+    color: $fontcolor;
+
+    input {
+        color: $fontcolor;
+    }
+
+    .Header,
+    .Introduction,
+    .ViewList,
+    .Bar {
+        //background-color: #262c34;
+        background-color: $cardcolor;
+        box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color;
+        color: $fontcolor;
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+    }
+
+    .card {
+        color: $fontcolor;
+    }
+
+    a,
+    div,
+    span,
+    small,
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    input {
+        color: $fontcolor;
+    }
+
+    .logo {
+        filter: invert($theme);
+    }
+
+    .leftBorder {
+        border-left: 1px solid $fontcolor;
+    }
+
+    .separator {
+        color: $fontcolor;
+    }
+}
+
+body.light-mode {
+    //white, #181818, #f8f9fa, #d0d1d2, #ffffff, 1)
+    $bgcolor: white;
+    $fontcolor: #181818;
+    $cardcolor: #f1f3f5;
+    $sh1color: #d0d1d2;
+    $sh2color: #ffffff;
+    $theme: 0;
+
+    background-color: #e9ecef;
+    transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+    color: $fontcolor;
+
+    input {
+        color: $fontcolor;
+    }
+
+    .Header,
+    .Introduction,
+    .ViewList,
+    .Bar {
+        //background-color: #262c34;
+        background-color: $cardcolor;
+        box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color;
+        color: $fontcolor;
+        transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+    }
+
+    .card {
+        color: $fontcolor;
+    }
+
+    a,
+    div,
+    span,
+    small,
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    input {
+        color: $fontcolor;
+    }
+
+    .logo {
+        filter: invert(1);
+    }
+
+    .leftBorder {
+        border-left: 1px solid $fontcolor;
+    }
+
+    .separator {
+        color: $fontcolor;
+    }
+}
+
+body.light-mode,
+body.dark-mode {
+    .Logout {
+        color: red;
+    }
+
+    .tagText,
+    .Introduction > h1,
+    .Introduction > p {
+        color: white !important;
+    }
+
+    input {
+        background-color: #f1f3f5;
+    }
+}

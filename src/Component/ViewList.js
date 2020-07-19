@@ -8,26 +8,22 @@ const ViewList = () => {
     return (
         <>
             <Search />
-            {console.log('search')}
             <ScrollList className="noScroll ViewList">
-                {console.log('scrolllist')}
                 <FetchPost />
             </ScrollList>
-            <Footer />
         </>
     )
 }
 
+//background-color: #262c34;
 const ScrollList = styled.div`
-    background-color: #262c34;
+    flex: 1;
     display: flex;
     flex-direction: column;
     position: relative;
-    flex: 1;
+
     overflow-y: scroll;
-    border-radius: 15px 15px 0 0px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
-    margin-bottom: 50px;
+    border-radius: 50px 50px 0 0;
 
     opacity: 0;
 

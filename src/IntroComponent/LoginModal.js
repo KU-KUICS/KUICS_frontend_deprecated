@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 import './Modal/Modal.scss'
 import Context from '../Component/Context'
 
+const { REACT_APP_API_HOST } = process.env
+
 const LoginModal = ({ isOpen, close }) => {
+    const apiURL = `http://${REACT_APP_API_HOST}/api/auth/login`
+
     return (
         <>
             {isOpen ? (
@@ -12,12 +16,16 @@ const LoginModal = ({ isOpen, close }) => {
                     <div className="Modal">
                         <p className="title">KUICS LOGIN</p>
                         <div className="content">
-                            <p>OAuth 이용한 로그인 방식</p>
-                        </div>
-                        <div className="button-wrap">
-                            <Link to="/notice" components={Context}>
-                                <button> Confirm </button>
-                            </Link>
+                            <a href={apiURL}>
+                                <img
+                                    style={{
+                                        width: '100%',
+                                        height: '80%',
+                                        margin: '1rem 0 1rem 0',
+                                    }}
+                                    src="./static/btn_google_signin_light_normal_web@2x.png"
+                                />
+                            </a>
                         </div>
                     </div>
                 </>

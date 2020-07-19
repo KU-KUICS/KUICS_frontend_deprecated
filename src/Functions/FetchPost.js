@@ -22,7 +22,6 @@ const FetchPost = () => {
 
     return (
         <>
-            {console.log('hi')}
             {fetchedData
                 ? fetchedData.map((posts, id) => (
                       <LazyLoad key={id} overflow={true} throttle={100} height={100}>
