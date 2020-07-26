@@ -9,7 +9,7 @@ const FetchPost = () => {
     let pathname = location.pathname
     const apiURL: string = `./dummy/${pathname}.json`
 
-    const [fetchedData, setFetch] = useState<Array<object> | null>(null)
+    const [fetchedData, setFetch] = useState<Array<object>>([])
 
     useEffect(() => {
         const fetchFunction = async (apiURL: string) => {

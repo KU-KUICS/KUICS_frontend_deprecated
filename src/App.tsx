@@ -38,7 +38,7 @@ const Layout = styled.div`
     width: 100%;
     height: 100%;
     overflow-x: visible;
-    max-width: 800px;
+    max-width: 1000px;
 `
 
 export default App

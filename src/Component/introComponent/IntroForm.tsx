@@ -63,7 +63,7 @@ const TmpBox = styled.div`
 `
 
 const IntroBox = styled.div`
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     height: 100%;
     flex-shrink: 1;

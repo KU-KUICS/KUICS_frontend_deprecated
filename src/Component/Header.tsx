@@ -68,7 +68,7 @@ const ColumnBox = styled(RowBox)`
 const Shadow = styled.div`
     display: block;
     border-radius: 0 0 50px 50px;
-    padding: 2.25rem;
+    padding: 1.3rem;
     width: -webkit-fill-available;
 `
 
@@ -81,7 +81,8 @@ const SHeader = styled.header`
     text-align: center;
     align-self: flex-start;
 
-    padding: 1rem;
-    padding-top: 0;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
     border-radius: 2rem;
 `
