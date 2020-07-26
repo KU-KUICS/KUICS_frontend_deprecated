@@ -29,6 +29,7 @@
     "react-transition-group": "^4.4.1",
     "sass": "^1.26.10",
     "styled-components": "^5.1.1",
+    "types": "^0.1.1",
     "typescript": "~3.7.2",
     "use-dark-mode": "^2.3.1"
   },
