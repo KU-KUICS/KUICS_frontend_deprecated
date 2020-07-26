@@ -2,8 +2,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import React from 'react'
 import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
-import LazyLoad from 'react-lazyload'
-import oc from 'open-color'
 
 import './PostList.scss'
 
