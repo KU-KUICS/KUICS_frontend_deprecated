@@ -152,4 +152,8 @@ body.dark-mode {
     input {
         background-color: #f1f3f5;
     }
+
+    .ViewList {
+        transition: top 0.4s ease;
+    }
 }

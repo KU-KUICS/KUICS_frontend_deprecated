@@ -1,14 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Search from './search/Search'
 import ViewList from './ViewList'
 
 const Context = () => {
-    return (
-        <>
-            <Search />
-            <ViewList />
-        </>
-    )
+    return <ViewList />
 }
 
 export default Context

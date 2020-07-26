@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Navigation'
-import SearchBar from './search/SearchBar'
 import DarkModeToggle from './darkMode/DarkModeToggle'
 
-const Header = () => {
+const Header: React.FC = () => {
     let location = useLocation()
     let pathname = location.pathname
 
@@ -23,7 +22,6 @@ const Header = () => {
                 <ColumnBox>
                     <RowBox>
                         <Gnb />
-
                         <ColumnBox>
                             <Profile>hyp3rflow</Profile>
                             <Logout className="Logout">logout</Logout>
@@ -70,6 +68,7 @@ const Shadow = styled.div`
     border-radius: 0 0 50px 50px;
     padding: 1.3rem;
     width: -webkit-fill-available;
+    width: 95%;
 `
 
 const SHeader = styled.header`

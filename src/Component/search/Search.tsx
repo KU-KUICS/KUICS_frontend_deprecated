@@ -3,7 +3,17 @@ import { BsPlusCircle } from 'react-icons/bs'
 import styled from 'styled-components'
 import SearchBar from './SearchBar'
 
-const Search: React.FC = () => {
+interface Props {
+    state: boolean
+    setState: Function
+}
+
+const Search: React.FC<Props> = ({ state, setState }) => {
+    const revState = () => {
+        console.log('hi')
+        setState(!state)
+    }
+
     return (
         <RowBox>
             <Write>
@@ -11,7 +21,7 @@ const Search: React.FC = () => {
                 &nbsp;글쓰기
             </Write>
             <StyledSearch>
-                <SearchBar />
+                <SearchBar func={revState} />
             </StyledSearch>
         </RowBox>
     )
