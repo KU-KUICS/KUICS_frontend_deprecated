@@ -1,7 +1,7 @@
 import LazyLoad from 'react-lazyload'
 import React, { useState, useEffect } from 'react'
 import fetching from './fetching'
-import PostList from '../component/post/PostList'
+import PostList from '../component2/post/PostList'
 import { useLocation } from 'react-router-dom'
 
 const FetchPost = () => {
