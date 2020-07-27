@@ -92,7 +92,7 @@ const StyledShrink = styled.div<shrinkType>`
     border-radius: 50px;
 
     visibility: ${props => (props.state ? 'visible' : 'hidden')};
-    animation: ${props => (props.state ? fadeOut : fadeIn)} 0.7s linear;
+    animation: ${props => (props.state ? fadeOut : fadeIn)} 1s linear;
     transition: visibility 0.7s linear;
 
     height: fit-content;

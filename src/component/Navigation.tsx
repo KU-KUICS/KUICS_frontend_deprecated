@@ -18,6 +18,9 @@ const Gnb: React.FC = () => {
             <StyledLink className="boardLink" to="/board" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber board">board</Navigator>
             </StyledLink>
+            <StyledLink className="boardLink" to="/ctf" onClick={clickEvent} pathname={pathname}>
+                <Navigator className="categoryNumber ctf">CTF</Navigator>
+            </StyledLink>
         </NavigatorList>
     )
 }

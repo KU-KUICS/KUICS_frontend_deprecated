@@ -1,13 +1,14 @@
 import React from 'react'
 import './style.scss'
 import './theme.scss'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
 import DarkModeToggle from './component/darkMode/DarkModeToggle'
 import IntroForm from './component/introComponent/IntroForm'
 import Header from './component/Header'
 import ViewList from './component/ViewList'
+import NotFound from './NotFound'
 
 const App = () => {
     return (
@@ -18,9 +19,12 @@ const App = () => {
                 </div>
                 <Layout className="Layout">
                     <Header />
-                    <Route exact path="/" component={IntroForm} />
-                    <Route path="/notice" component={ViewList} />
-                    <Route path="/board" component={ViewList} />
+                    <Switch>
+                        <Route exact path="/" component={IntroForm} />
+                        <Route path="/notice" component={ViewList} />
+                        <Route path="/board" component={ViewList} />
+                        <Route path="*" component={NotFound} />
+                    </Switch>
                 </Layout>
             </Router>
         </>

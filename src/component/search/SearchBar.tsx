@@ -3,7 +3,11 @@ import { FiSearch } from 'react-icons/fi'
 
 import './SearchBar.scss'
 
-const SearchBar: React.FC = () => {
+interface Props {
+    func: any
+}
+
+const SearchBar: React.FC<Props> = ({ func }) => {
     const ref = React.createRef<HTMLInputElement>()
 
     const BarComponent = React.forwardRef((props, ref) => {
@@ -13,7 +17,7 @@ const SearchBar: React.FC = () => {
     return (
         <>
             <BarComponent ref={ref} />
-            <FiSearch style={{ top: '4px', position: 'relative', paddingLeft: '1rem' }} />
+            <FiSearch onClick={func} style={{ top: '4px', position: 'relative', paddingLeft: '1rem' }} />
         </>
     )
 }
