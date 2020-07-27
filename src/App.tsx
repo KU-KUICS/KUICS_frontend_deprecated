@@ -4,10 +4,10 @@ import './theme.scss'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 
-import DarkModeToggle from './component2/darkMode/DarkModeToggle'
-import IntroForm from './component2/introComponent/IntroForm'
-import Header from './component2/Header'
-import ViewList from './component2/ViewList'
+import DarkModeToggle from './component/darkMode/DarkModeToggle'
+import IntroForm from './component/introComponent/IntroForm'
+import Header from './component/Header'
+import ViewList from './component/ViewList'
 import NotFound from './NotFound'
 
 const App = () => {
