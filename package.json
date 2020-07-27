@@ -7,8 +7,9 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
+    "@types/node": "^14.0.26",
     "@types/react": "^16.9.43",
+    "@types/react-dates": "^17.1.13",
     "@types/react-dom": "^16.9.0",
     "@types/react-lazyload": "^2.6.0",
     "@types/react-router-dom": "^5.1.5",
@@ -21,9 +22,11 @@
     "open-color": "^1.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-lazyload": "^3.0.0",
+    "react-moment-proptypes": "^1.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.4.1",
@@ -55,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typings": "^2.1.1"
   }
 }

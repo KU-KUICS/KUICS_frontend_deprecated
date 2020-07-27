@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
 
 import './PostList.scss'
+import { Link } from 'react-router-dom'
 
 type postType = {
     boardNo: number
@@ -25,7 +26,9 @@ const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
                 <ColumnBox key={key}>
                     <RowBox>
                         <PostNumber>{boardNo}</PostNumber>
-                        <Title>{title}</Title>
+                        <Title>
+                            <Link to="/board/2">{title}</Link>
+                        </Title>
                         <TagList>
                             <Tag color="green" textColor="white">
                                 <span className="tagText">Active&nbsp;</span>

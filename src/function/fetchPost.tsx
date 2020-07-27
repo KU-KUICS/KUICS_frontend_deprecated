@@ -7,17 +7,19 @@ import { useLocation } from 'react-router-dom'
 const FetchPost = () => {
     let location = useLocation()
     let pathname = location.pathname
-    const apiURL: string = `./dummy/${pathname}.json`
+    const apiURL: string = `./dummy${pathname}.json`
+
+    console.log(apiURL)
 
     const [fetchedData, setFetch] = useState<Array<object>>([])
 
     useEffect(() => {
-        const fetchFunction = async (apiURL: string) => {
+        const fetchFunction = async (apiURL: string): Promise<void> => {
             const fetched = await fetching(apiURL)
             setFetch(fetched.boardList)
         }
 
-        fetchFunction(apiURL)
+        fetchFunction(apiURL).catch(error => console.log(error))
     }, [apiURL])
 
     return (

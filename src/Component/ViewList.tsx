@@ -37,12 +37,15 @@ export const ScrollList = styled.div<ScrollState>`
     top: ${props => (props.state ? '200px' : '0px')};
     transition: position 0.4s ease;
 
+    z-index: 0;
+
     flex: 1;
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
     overflow-y: scroll;
+    height: 10px;
 
     border-radius: 50px 50px 0 0;
 

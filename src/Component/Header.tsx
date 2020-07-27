@@ -8,6 +8,8 @@ const Header: React.FC = () => {
     let location = useLocation()
     let pathname = location.pathname
 
+    console.log(pathname)
+
     return pathname === '/' ? (
         <></>
     ) : (
