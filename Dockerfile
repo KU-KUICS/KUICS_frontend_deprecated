@@ -9,6 +9,7 @@ COPY yarn.lock /kuics-frontend
 RUN yarn install
 
 COPY . /kuics-frontend
-CMD yarn build && yarn serve
+RUN yarn build
+CMD yarn serve
 
 EXPOSE 5000
