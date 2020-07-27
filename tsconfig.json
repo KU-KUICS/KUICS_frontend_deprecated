@@ -1,3 +1,4 @@
+        "allowJs": true,
 {
   "compilerOptions": {
     "target": "es5",

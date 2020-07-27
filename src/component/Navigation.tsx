@@ -1,15 +1,14 @@
-import React, { useMemo } from 'react'
+import React, { ButtonHTMLAttributes, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { StyledComponent } from 'styled-components'
 
-const Gnb = () => {
-    const clickEvent = event => {
+const Gnb: React.FC = () => {
+    const clickEvent = (event: React.MouseEvent) => {
         console.log(event.target)
     }
 
     let location = useLocation()
     let pathname = location.pathname
-    console.log(pathname)
 
     return (
         <NavigatorList className="leftBorder">
@@ -18,6 +17,9 @@ const Gnb = () => {
             </StyledLink>
             <StyledLink className="boardLink" to="/board" onClick={clickEvent} pathname={pathname}>
                 <Navigator className="categoryNumber board">board</Navigator>
+            </StyledLink>
+            <StyledLink className="boardLink" to="/ctf" onClick={clickEvent} pathname={pathname}>
+                <Navigator className="categoryNumber ctf">CTF</Navigator>
             </StyledLink>
         </NavigatorList>
     )
@@ -46,7 +48,11 @@ const NavigatorList = styled.ul`
     }
 `
 
-const StyledLink = styled(Link)`
+interface LinkProps {
+    readonly pathname: string
+}
+
+const StyledLink = styled(Link)<LinkProps>`
     position: relative;
     display: block;
 

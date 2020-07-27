@@ -4,12 +4,16 @@ import styled from 'styled-components'
 import Emoji from 'a11y-react-emoji'
 
 import './PostList.scss'
+import { Link } from 'react-router-dom'
 
-const PostList = (props, key) => {
-    const ID = props.boardNo
-    const title = props.title
-    const Excerpt = props.excerpt
+type postType = {
+    boardNo: number
+    title: string
+    excerpt: string
+    props: object
+}
 
+const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
     const pageTrans = 'trans'
     const classNames = {
         appear: `${pageTrans} appear`,
@@ -21,8 +25,10 @@ const PostList = (props, key) => {
             <CSSTransition key={key} classNames={classNames} timeout={300} appear>
                 <ColumnBox key={key}>
                     <RowBox>
-                        <PostNumber>{ID}</PostNumber>
-                        <Title>{title}</Title>
+                        <PostNumber>{boardNo}</PostNumber>
+                        <Title>
+                            <Link to="/board/2">{title}</Link>
+                        </Title>
                         <TagList>
                             <Tag color="green" textColor="white">
                                 <span className="tagText">Active&nbsp;</span>
@@ -35,7 +41,7 @@ const PostList = (props, key) => {
                         </TagList>
                     </RowBox>
                     <ContentRowBox>
-                        <TagExcerpt>{Excerpt ? Excerpt : 'none.'}</TagExcerpt>
+                        <TagExcerpt>{excerpt ? excerpt : 'none.'}</TagExcerpt>
                         <CommentColumnBox>
                             <div>3900 comments</div>
                             <div>3000 views</div>
@@ -59,7 +65,12 @@ const TagList = styled.div`
     flex-shrink: 0;
 `
 
-const Tag = styled.div`
+interface TagProps {
+    readonly color: string
+    readonly textColor: string
+}
+
+const Tag = styled.div<TagProps>`
     display: flex;
     justify-content: center;
     text-align: center;
@@ -111,8 +122,6 @@ const CommentColumnBox = styled.div`
     flex-shrink: 0;
     padding-left: 0.5rem;
     font-size: 1.125rem;
-    div {
-    }
 `
 //color: #ced4da;
 

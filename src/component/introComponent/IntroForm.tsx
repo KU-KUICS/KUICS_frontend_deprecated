@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import DarkModeToggle from '../DarkModeToggle'
+import DarkModeToggle from '../darkMode/DarkModeToggle'
 import About from './About'
 import LoginModal from './LoginModal'
 
 const IntroForm = () => {
-    const [modalState, setModalState] = useState(false)
-    const [loading, reverseLoading] = useState(false)
+    const [modalState, setModalState] = useState<boolean>(false)
+    const [loading, reverseLoading] = useState<boolean>(false)
 
-    const clickEvent = (func, state) => {
+    const clickEvent = (func: Function, state: boolean) => {
         func(!state)
     }
+
+    // 폰트 굵기 숫자로 지정하면 오류 뜸
+    const fontweight = { fontWeight: '400' } as any
 
     return (
         <>
@@ -32,7 +35,7 @@ const IntroForm = () => {
                     </StyledCenterRightLine>
                     <StyledCenter>
                         <h2>고려대학교 컴퓨터학과 정보보호학회</h2>
-                        <h3 style={{ fontWeight: '400' }}>Korea University Institute of Computer Security</h3>
+                        <h3 style={fontweight}>Korea University Institute of Computer Security</h3>
                         <StyledRight>
                             <span onClick={() => clickEvent(setModalState, modalState)}>로그인</span>
                         </StyledRight>
@@ -60,7 +63,7 @@ const TmpBox = styled.div`
 `
 
 const IntroBox = styled.div`
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     height: 100%;
     flex-shrink: 1;
@@ -74,8 +77,12 @@ const IntroBox = styled.div`
     }
 `
 
+interface shrinkType {
+    state: boolean
+}
+
 // background-color: #262c34;
-const StyledShrink = styled.div`
+const StyledShrink = styled.div<shrinkType>`
     position: relative;
     flex-direction: column;
     align-items: center;
@@ -85,7 +92,7 @@ const StyledShrink = styled.div`
     border-radius: 50px;
 
     visibility: ${props => (props.state ? 'visible' : 'hidden')};
-    animation: ${props => (props.state ? fadeOut : fadeIn)} 0.7s linear;
+    animation: ${props => (props.state ? fadeOut : fadeIn)} 1s linear;
     transition: visibility 0.7s linear;
 
     height: fit-content;

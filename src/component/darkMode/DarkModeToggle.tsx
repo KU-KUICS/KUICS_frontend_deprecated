@@ -8,16 +8,16 @@ const DarkModeToggle = () => {
     return (
         <ToggleButton onClick={darkMode.value ? darkMode.disable : darkMode.enable}>
             <div id="dmtoggle">
-                <div class="arc"></div>
-                <div class="darc"></div>
-                <div class="ray one"></div>
-                <div class="ray two"></div>
-                <div class="ray three"></div>
-                <div class="ray four"></div>
-                <div class="ray five"></div>
-                <div class="ray six"></div>
-                <div class="ray seven"></div>
-                <div class="ray eight"></div>
+                <div className="arc"></div>
+                <div className="darc"></div>
+                <div className="ray one"></div>
+                <div className="ray two"></div>
+                <div className="ray three"></div>
+                <div className="ray four"></div>
+                <div className="ray five"></div>
+                <div className="ray six"></div>
+                <div className="ray seven"></div>
+                <div className="ray eight"></div>
             </div>
         </ToggleButton>
     )

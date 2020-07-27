@@ -1,4 +1,4 @@
-const fetching = URL => {
+const fetching = (URL: string) => {
     return fetch(URL, {
         headers: {
             accept: '*/*',

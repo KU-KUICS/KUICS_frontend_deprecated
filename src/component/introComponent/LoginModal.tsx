@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Modal/Modal.scss'
-import Context from '../Component/Context'
+import './Modal.scss'
+import Context from '../Context'
 
 const { REACT_APP_API_HOST } = process.env
 
-const LoginModal = ({ isOpen, close }) => {
+type propType = {
+    isOpen: boolean
+    close: () => void
+}
+
+const LoginModal: React.FC<propType> = ({ isOpen, close }) => {
     const apiURL = `http://${REACT_APP_API_HOST}/api/auth/login`
 
     return (

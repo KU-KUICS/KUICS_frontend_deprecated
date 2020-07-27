@@ -11,4 +11,4 @@ RUN yarn install
 COPY . /kuics-frontend
 CMD yarn build && yarn serve
 
-EXPOSE 3000
+EXPOSE 5000

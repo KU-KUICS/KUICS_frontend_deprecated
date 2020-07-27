@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import Gnb from './Gnb'
-import SearchBar from './SearchBar'
-import DarkModeToggle from '../DarkModeToggle'
+import Gnb from './Navigation'
+import DarkModeToggle from './darkMode/DarkModeToggle'
 
-const Header = () => {
+const Header: React.FC = () => {
     let location = useLocation()
     let pathname = location.pathname
 
+    console.log(pathname)
+
     return pathname === '/' ? (
-        ''
+        <></>
     ) : (
         <Shadow className="Header">
             <RowBox>
-                <SHeader className>
+                <SHeader>
                     <img className="logo" alt="KUICS logo" style={{ width: '4rem' }} src="./static/kuics-logo.svg" />
                     <Link to="/">
                         <h1>KUICS</h1>
@@ -23,7 +24,6 @@ const Header = () => {
                 <ColumnBox>
                     <RowBox>
                         <Gnb />
-
                         <ColumnBox>
                             <Profile>hyp3rflow</Profile>
                             <Logout className="Logout">logout</Logout>
@@ -35,6 +35,8 @@ const Header = () => {
         </Shadow>
     )
 }
+
+export default Header
 
 const Profile = styled.div`
     font-size: 1.725rem;
@@ -63,13 +65,12 @@ const ColumnBox = styled(RowBox)`
     flex-shrink: 0;
 `
 
-//background-color: #262c34;
-//
 const Shadow = styled.div`
     display: block;
     border-radius: 0 0 50px 50px;
-    padding: 2.25rem;
+    padding: 1.3rem;
     width: -webkit-fill-available;
+    width: 95%;
 `
 
 const SHeader = styled.header`
@@ -81,9 +82,8 @@ const SHeader = styled.header`
     text-align: center;
     align-self: flex-start;
 
-    padding: 1rem;
-    padding-top: 0;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
     border-radius: 2rem;
 `
-
-export default Header
