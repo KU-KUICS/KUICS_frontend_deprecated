@@ -6,19 +6,23 @@ import Emoji from 'a11y-react-emoji'
 import './PostList.scss'
 import { Link } from 'react-router-dom'
 
-type postType = {
+interface postListType {
     boardNo: number
     title: string
     excerpt: string
-    props: object
+    pathname: string
+    category: string
+    key: number
 }
 
-const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
+const PostList: React.FC<postListType> = ({ boardNo, title, excerpt, pathname, category }, key) => {
     const pageTrans = 'trans'
     const classNames = {
         appear: `${pageTrans} appear`,
         appearDone: `${pageTrans} appear done`,
     }
+    console.log(pathname)
+    console.log(pathname + '/' + boardNo)
 
     return (
         <TransitionGroup className="transitionGroup card">
@@ -27,7 +31,7 @@ const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
                     <RowBox>
                         <PostNumber>{boardNo}</PostNumber>
                         <Title>
-                            <Link to="/board/2">{title}</Link>
+                            <Link to={`${category}/${boardNo}`}>{title}</Link>
                         </Title>
                         <TagList>
                             <Tag color="green" textColor="white">

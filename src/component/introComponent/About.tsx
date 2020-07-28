@@ -12,14 +12,13 @@ const About: React.FC<AboutProps> = props => {
     const [fetchedData, setFetch] = useState([])
     const [loading, setLoading] = useState<boolean>(false)
 
-    const apiURL = `./dummy/about.json`
-    //const apiURL = `http://${REACT_APP_API_HOST}/api/intro`
+    // const apiURL = `./dummy/about.json`
+    const apiURL = `http://${REACT_APP_API_HOST}/api/intro`
 
     useEffect(() => {
         const fetchData = async (apiURL: string) => {
             try {
                 const fetched = await fetching(apiURL)
-                console.log(fetchedData)
                 await setLoading(true)
                 setFetch(fetched.introList)
                 props.changeFunction(true)

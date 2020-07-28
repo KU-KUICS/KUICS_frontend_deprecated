@@ -1,6 +1,6 @@
-import React, { ButtonHTMLAttributes, useMemo } from 'react'
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 
 const Gnb: React.FC = () => {
     const clickEvent = (event: React.MouseEvent) => {
@@ -13,25 +13,17 @@ const Gnb: React.FC = () => {
     return (
         <NavigatorList className="leftBorder">
             <StyledLink className="noticeLink" to="/notice" onClick={clickEvent} pathname={pathname}>
-                <Navigator className="categoryNumber notice">notice</Navigator>
+                <span className="categoryNumber notice">notice</span>
             </StyledLink>
             <StyledLink className="boardLink" to="/board" onClick={clickEvent} pathname={pathname}>
-                <Navigator className="categoryNumber board">board</Navigator>
+                <span className="categoryNumber board">board</span>
             </StyledLink>
-            <StyledLink className="boardLink" to="/ctf" onClick={clickEvent} pathname={pathname}>
-                <Navigator className="categoryNumber ctf">CTF</Navigator>
+            <StyledLink className="ctfLink" to="/ctf" onClick={clickEvent} pathname={pathname}>
+                <span className="categoryNumber ctf">CTF</span>
             </StyledLink>
         </NavigatorList>
     )
 }
-
-const Navigator = styled.span`
-    &:hover,
-    &:focus,
-    &:active {
-        color: lime;
-    }
-`
 
 const NavigatorList = styled.ul`
     position: relative;
@@ -64,6 +56,10 @@ const StyledLink = styled(Link)<LinkProps>`
     .notice {
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
         color: ${props => (props.pathname.includes('/notice') ? 'coral' : 'inherit')};
+    }
+
+    .ctf {
+        color: lime;
     }
 `
 

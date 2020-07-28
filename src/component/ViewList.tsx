@@ -1,18 +1,22 @@
 import React, { useRef, useState, useEffect } from 'react'
-import Footer from './Footer'
 import styled from 'styled-components'
 import Search from './search/Search'
-import FetchPost from '../function/fetchPost'
-import Post from './post/Post'
+import FetchPostList from '../function/fetchPostList'
+import { useLocation } from 'react-router-dom'
+
+const { REACT_APP_API_HOST } = process.env
+const apiURL = `http://${REACT_APP_API_HOST}/api`
 
 const ViewList = () => {
-    const [search, setSearch] = useState<boolean>(false)
+    let location = useLocation()
+    let pathname = location.pathname
 
+    const [search, setSearch] = useState<boolean>(false)
     const onScroll = () => {
         console.log(targetRef?.current?.scrollTop)
     }
 
-    const searchRef = useRef<HTMLDivElement>()
+    // const searchRef = useRef<HTMLDivElement>()
     const targetRef = useRef<HTMLDivElement>()
     useEffect(() => {
         targetRef?.current?.addEventListener('scroll', onScroll as any)
@@ -22,7 +26,7 @@ const ViewList = () => {
         <>
             <Search state={search} setState={setSearch} />
             <ScrollList state={search} className="noScroll ViewList" ref={targetRef as any}>
-                <FetchPost />
+                <FetchPostList pathname={apiURL + pathname} category={pathname} />
             </ScrollList>
         </>
     )

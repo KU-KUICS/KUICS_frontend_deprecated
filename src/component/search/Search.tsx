@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import SearchBar from './SearchBar'
 import 'react-dates/initialize'
 import 'react-dates/constants'
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates'
+import { DateRangePicker } from 'react-dates'
 import 'react-dates/lib/css/_datepicker.css'
 import { Moment } from 'moment'
 

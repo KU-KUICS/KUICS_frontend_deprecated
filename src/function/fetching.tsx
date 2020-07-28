@@ -3,12 +3,18 @@ const fetching = (URL: string) => {
         headers: {
             accept: '*/*',
         },
-
         body: null,
         method: 'GET',
-    }).then(response => {
-        return response.json()
     })
+        .then(response => {
+            const debugRes = response.clone()
+            console.log(debugRes.json())
+
+            return response.json()
+        })
+        .catch(err => {
+            throw Error
+        })
 }
 
 export default fetching

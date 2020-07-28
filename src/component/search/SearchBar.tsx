@@ -17,6 +17,7 @@ const SearchBar: React.FC<Props> = ({ func }) => {
     return (
         <>
             <BarComponent ref={ref} />
+
             <FiSearch onClick={func} style={{ top: '4px', position: 'relative', paddingLeft: '1rem' }} />
         </>
     )

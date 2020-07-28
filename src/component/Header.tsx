@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState, useEffect } from 'react'
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Navigation'
@@ -16,7 +16,12 @@ const Header: React.FC = () => {
         <Shadow className="Header">
             <RowBox>
                 <SHeader>
-                    <img className="logo" alt="KUICS logo" style={{ width: '4rem' }} src="./static/kuics-logo.svg" />
+                    <img
+                        className="logo"
+                        alt="KUICS logo"
+                        style={{ width: '4rem', paddingTop: '1rem' }}
+                        src="./static/kuics-logo.svg"
+                    />
                     <Link to="/">
                         <h1>KUICS</h1>
                     </Link>
@@ -26,7 +31,9 @@ const Header: React.FC = () => {
                         <Gnb />
                         <ColumnBox>
                             <Profile>hyp3rflow</Profile>
-                            <Logout className="Logout">logout</Logout>
+                            <Link to="/">
+                                <Logout className="Logout">logout</Logout>
+                            </Link>
                             <DarkModeToggle />
                         </ColumnBox>
                     </RowBox>
