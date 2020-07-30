@@ -29,8 +29,9 @@ const NavigatorList = styled.ul`
     position: relative;
 
     display: inline-block;
-    line-height: 2rem;
+    line-height: 1.815rem;
     padding-left: 1rem;
+    margin-top: 1.125rem;
     margin-left: 1px;
 
     align-self: flex-start;
@@ -60,6 +61,10 @@ const StyledLink = styled(Link)<LinkProps>`
 
     .ctf {
         color: lime;
+    }
+
+    span {
+        font-size: 1.3125rem;
     }
 `
 

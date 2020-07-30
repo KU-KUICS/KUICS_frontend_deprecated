@@ -25,6 +25,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+    font-size: 16px;
 }
 
 body,
@@ -46,7 +47,6 @@ input {
     margin: 0;
     padding: 0;
     line-break: normal;
-    word-break: keep-all;
 }
 
 h1,
@@ -80,7 +80,7 @@ input {
 
 @media screen and (min-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .tagText {
@@ -90,7 +90,11 @@ input {
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 12px;
+        font-size: 14px;
+    }
+
+    .Bar.Search {
+        display: none;
     }
 
     .tagText {
@@ -218,7 +222,7 @@ body.dark-mode #dmtoggle .ray {
 button,
 button:focus,
 button:active {
-    border: 1px solid black;
+    //    border: 1px solid black;
     background: none;
     outline: none;
     box-shadow: none;
@@ -231,4 +235,12 @@ button span {
 .DateInput_input {
     padding: 0 !important;
     text-align: center;
+}
+
+.recommend__menu {
+    text-align: left;
+}
+
+.editor {
+    border-radius: 3rem;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import fetching from '../../function/fetching'
+import fetching from '../../../function/fetching'
 import styled from 'styled-components'
 
 const { REACT_APP_API_HOST } = process.env

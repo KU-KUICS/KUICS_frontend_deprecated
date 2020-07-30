@@ -17,7 +17,10 @@ body.dark-mode {
     .Header,
     .Introduction,
     .ViewList,
-    .Bar {
+    .Bar,
+    .recDropDown,
+    .recommend__control,
+    .SubmitButton {
         //background-color: #262c34;
         background-color: $cardcolor;
         box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color;
@@ -25,65 +28,13 @@ body.dark-mode {
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
     }
 
-    .DateRangePicker_picker,
-    .DayPicker,
-    .CalendarMonthGrid_month__horizontal,
-    .CalendarMonth,
-    .CalendarMonthGrid {
-        background-color: $cardcolor !important;
-        color: $fontcolor !important;
+    .recommend__option:hover {
+        background: $sh1color;
     }
 
-    .DayPickerNavigation_button,
-    .CalendarDay:not(.CalendarDay__selected, .CalendarDay__hovered_span) {
-        background-color: $sh2color !important;
-        border: 0 !important;
-        color: $fontcolor !important;
-        // box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color !important;
-    }
-
-    .CalendarDay__selected {
-        background: #00a699 !important;
-        box-shadow: none !important;
-        border: none;
-    }
-
-    .CalendarDay__hovered_span {
-        background: #00a677 !important;
-    }
-
-    .DateInput_input {
-        background: none;
-        margin: 0;
-        border: 0;
-        margin-top: 5px;
-    }
-
-    .DateRangePickerInput__withBorder {
-        border: 0;
-    }
-
-    .DateRangePickerInput {
-        background-color: rgba($color: #000000, $alpha: 0);
-
-        input::placeholder {
-            font-weight: 500;
-            color: $fontcolor !important;
-        }
-    }
-
-    .DateRangePickerInput_arrow_svg {
-        margin-top: 3px;
-        fill: $fontcolor !important;
-    }
-
-    .DateRangePicker {
-        box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color !important;
-        border-radius: 2rem !important;
-    }
-
-    .DateInput {
-        background: none;
+    .recommend__menu,
+    .recommend__menu-list {
+        background: $cardcolor;
     }
 
     .Modal {
@@ -111,7 +62,8 @@ body.dark-mode {
     h5,
     h6,
     ul,
-    input {
+    input,
+    button {
         color: $fontcolor;
     }
 
@@ -120,7 +72,7 @@ body.dark-mode {
     }
 
     .leftBorder {
-        border-left: 1px solid $fontcolor;
+        border-left: 1px solid white;
     }
 
     .separator {
@@ -129,7 +81,7 @@ body.dark-mode {
 }
 
 body.light-mode {
-    //white, #181818, #f8f9fa, #d0d1d2, #ffffff, 1)
+    //white, #181818, #f8f9fa, #d0d1d2, #ffffff, 1
     $bgcolor: white;
     $fontcolor: #181818;
     $cardcolor: #f1f3f5;
@@ -148,12 +100,31 @@ body.light-mode {
     .Header,
     .Introduction,
     .ViewList,
-    .Bar {
+    .Bar,
+    .recDropDown,
+    .recommend__control,
+    .SubmitButton {
+        border: none;
         //background-color: #262c34;
         background-color: $cardcolor;
         box-shadow: 8px 8px 16px $sh1color, -8px -8px 16px $sh2color;
         color: $fontcolor;
         transition: color 0.6s cubic-bezier(0, 0.51, 0.42, 0.84);
+    }
+
+    button:focus {
+        border-radius: 50px;
+        background: $cardcolor;
+        box-shadow: inset 20px 20px 60px #cdcfd0, inset -20px -20px 60px #ffffff;
+    }
+
+    .recommend__option:hover {
+        background: $sh1color;
+    }
+
+    .recommend__menu,
+    .recommend__menu-list {
+        background: $cardcolor;
     }
 
     .card {
@@ -190,7 +161,7 @@ body.light-mode {
     }
 
     .leftBorder {
-        border-left: 1px solid $fontcolor;
+        border-left: 1px solid black;
     }
 
     .separator {
@@ -216,5 +187,22 @@ body.dark-mode {
 
     .ViewList {
         transition: top 0.4s ease;
+    }
+
+    .tui-tooltip {
+        span {
+            color: white;
+        }
+    }
+
+    .te-editor {
+        pre,
+        span {
+            color: black;
+        }
+    }
+
+    .te-preview {
+        background: white;
     }
 }

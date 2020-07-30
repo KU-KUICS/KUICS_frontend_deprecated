@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Gnb from './Navigation'
-import DarkModeToggle from './darkMode/DarkModeToggle'
+import DarkModeToggle from '../darkMode/DarkModeToggle'
 
 const Header: React.FC = () => {
     let location = useLocation()
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
                 <ColumnBox>
                     <RowBox>
                         <Gnb />
-                        <ColumnBox>
+                        <ColumnBox style={{ marginTop: '1rem' }}>
                             <Profile>hyp3rflow</Profile>
                             <Link to="/">
                                 <Logout className="Logout">logout</Logout>
@@ -46,12 +46,12 @@ const Header: React.FC = () => {
 export default Header
 
 const Profile = styled.div`
-    font-size: 1.725rem;
+    font-size: 1.3125rem;
     font-weight: 600;
 `
 
 const Logout = styled(Profile)`
-    font-size: 1.4rem;
+    font-size: 1.3125rem;
     color: red;
 `
 
@@ -75,9 +75,9 @@ const ColumnBox = styled(RowBox)`
 const Shadow = styled.div`
     display: block;
     border-radius: 0 0 50px 50px;
-    padding: 1.3rem;
+    padding: 1rem 1rem 1.5rem 1rem;
     width: -webkit-fill-available;
-    width: 95%;
+    width: 90%;
 `
 
 const SHeader = styled.header`

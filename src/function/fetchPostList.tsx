@@ -1,7 +1,7 @@
 import LazyLoad from 'react-lazyload'
 import React, { useState, useEffect } from 'react'
 import fetching from './fetching'
-import PostList from '../component/post/PostList'
+import PostList from '../component/page/postPage/PostList'
 
 const FetchPostList = ({ pathname, category }) => {
     const apiURL: string = `${pathname}`
@@ -23,7 +23,7 @@ const FetchPostList = ({ pathname, category }) => {
         <>
             {fetchedData
                 ? fetchedData.map((posts: any, id) => (
-                      <LazyLoad key={id} overflow={true} throttle={100} height={100}>
+                      <LazyLoad key={id} offset={100} height={100}>
                           {PostList({ ...posts, pathname, category }, id)}
                       </LazyLoad>
                   ))

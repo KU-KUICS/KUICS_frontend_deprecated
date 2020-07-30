@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import FetchPost from '../function/fetchPost'
-import { ScrollList } from './ViewList'
+import FetchPost from '../../function/fetchPost'
+import { ScrollList } from './ContextListView'
+import PostComment from '../page/postPage/PostComment'
 
 const ContextView = ({ category, id }) => {
     useEffect(() => {
@@ -8,8 +9,9 @@ const ContextView = ({ category, id }) => {
     }, [])
 
     return (
-        <ScrollList state={false}>
+        <ScrollList>
             <FetchPost pathname={`/${category}/${id}`} />
+            <PostComment />
         </ScrollList>
     )
 }
