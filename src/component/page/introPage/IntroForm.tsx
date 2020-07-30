@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import DarkModeToggle from '../darkMode/DarkModeToggle'
+import DarkModeToggle from '../../darkMode/DarkModeToggle'
 import About from './About'
 import LoginModal from './LoginModal'
 

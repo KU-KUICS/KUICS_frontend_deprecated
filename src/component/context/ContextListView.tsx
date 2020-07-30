@@ -1,18 +1,22 @@
 import React, { useRef, useState, useEffect } from 'react'
-import Footer from './Footer'
 import styled from 'styled-components'
-import Search from './search/Search'
-import FetchPost from '../function/fetchPost'
-import Post from './post/Post'
+import Search from '../page/searchPage/Search'
+import FetchPostList from '../../function/fetchPostList'
+import { useLocation } from 'react-router-dom'
 
-const ViewList = () => {
+const { REACT_APP_API_HOST } = process.env
+const apiURL = `http://${REACT_APP_API_HOST}/api`
+
+const ContextListView = () => {
+    let location = useLocation()
+    let pathname = location.pathname
+
     const [search, setSearch] = useState<boolean>(false)
-
     const onScroll = () => {
         console.log(targetRef?.current?.scrollTop)
     }
 
-    const searchRef = useRef<HTMLDivElement>()
+    // const searchRef = useRef<HTMLDivElement>()
     const targetRef = useRef<HTMLDivElement>()
     useEffect(() => {
         targetRef?.current?.addEventListener('scroll', onScroll as any)
@@ -21,9 +25,9 @@ const ViewList = () => {
     return (
         <>
             <Search state={search} setState={setSearch} />
-            <ScrollList state={search} className="noScroll ViewList" ref={targetRef as any}>
-                <FetchPost />
-            </ScrollList>
+            <ScrollListBoolean state={search} className="noScroll ViewList" ref={targetRef as any}>
+                <FetchPostList pathname={apiURL + pathname} category={pathname} />
+            </ScrollListBoolean>
         </>
     )
 }
@@ -33,8 +37,7 @@ interface ScrollState {
 }
 
 //background-color: #262c34;
-export const ScrollList = styled.div<ScrollState>`
-    top: ${props => (props.state ? '200px' : '0px')};
+export const ScrollList = styled.div`
     transition: position 0.4s ease;
 
     z-index: 0;
@@ -43,9 +46,10 @@ export const ScrollList = styled.div<ScrollState>`
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 100%;
-    overflow-y: scroll;
-    height: 10px;
+    width: 90%;
+
+
+    padding: 1rem 1rem 0rem 1rem;
 
     border-radius: 50px 50px 0 0;
 
@@ -63,11 +67,13 @@ export const ScrollList = styled.div<ScrollState>`
     animation-fill-mode: forwards;
     animation: fadeOut 0.5s ease 0.5s forwards;
 `
-
+export const ScrollListBoolean = styled(ScrollList)<ScrollState>`
+    top: ${props => (props.state ? '200px' : '0px')};
+`
 const RowBox = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
 `
 
-export default ViewList
+export default ContextListView

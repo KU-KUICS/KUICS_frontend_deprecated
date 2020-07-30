@@ -6,28 +6,32 @@ import Emoji from 'a11y-react-emoji'
 import './PostList.scss'
 import { Link } from 'react-router-dom'
 
-type postType = {
+interface postListType {
     boardNo: number
     title: string
     excerpt: string
-    props: object
+    pathname: string
+    category: string
+    key: number
 }
 
-const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
+const PostList: React.FC<postListType> = ({ boardNo, title, excerpt, pathname, category }, key) => {
     const pageTrans = 'trans'
     const classNames = {
         appear: `${pageTrans} appear`,
         appearDone: `${pageTrans} appear done`,
     }
+    //console.log(pathname)
+    //console.log(pathname + '/' + boardNo)
 
     return (
         <TransitionGroup className="transitionGroup card">
             <CSSTransition key={key} classNames={classNames} timeout={300} appear>
                 <ColumnBox key={key}>
                     <RowBox>
-                        <PostNumber>{boardNo}</PostNumber>
+                        <PostNumber>#{boardNo}</PostNumber>
                         <Title>
-                            <Link to="/board/2">{title}</Link>
+                            <Link to={`${category}/${boardNo}`}>{title}</Link>
                         </Title>
                         <TagList>
                             <Tag color="green" textColor="white">
@@ -41,12 +45,14 @@ const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
                         </TagList>
                     </RowBox>
                     <ContentRowBox>
-                        <TagExcerpt>{excerpt ? excerpt : 'none.'}</TagExcerpt>
-                        <CommentColumnBox>
-                            <div>3900 comments</div>
-                            <div>3000 views</div>
-                            <div>2020-02-22</div>
-                        </CommentColumnBox>
+                        <TagExcerpt>
+                            <CommentColumnBox>
+                                <div>3900 comments</div>
+                                <div>3000 views</div>
+                                <div>2020-02-22</div>
+                            </CommentColumnBox>
+                            {excerpt ? excerpt : 'none.'}
+                        </TagExcerpt>
                     </ContentRowBox>
                     <hr className="separator" />
                 </ColumnBox>
@@ -56,14 +62,6 @@ const PostList: React.FC<postType> = ({ boardNo, title, excerpt }, key) => {
 }
 
 export default PostList
-
-const TagList = styled.div`
-    align-self: flex-start;
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    flex-shrink: 0;
-`
 
 interface TagProps {
     readonly color: string
@@ -80,26 +78,33 @@ const Tag = styled.div<TagProps>`
         color: ${props => props.textColor};
     }
     padding: 0px 5px 0px 5px;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     margin: 0px 0px 0px 5px;
     border-radius: 5px;
-    height: 2rem;
+    height: 1.5rem;
     flex-shrink: 0;
     vertical-align: top;
 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 `
 
+const TagList = styled.div`
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+`
+
 //color: #f8f9fa;
 const Title = styled.div`
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3125rem;
 `
 
 //color: #dee2e6;
 const TagExcerpt = styled.div`
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1rem;
 `
 
 const ColumnBox = styled.div`
@@ -109,7 +114,7 @@ const ColumnBox = styled.div`
     flex-direction: column;
     min-height: 4rem;
 
-    padding: 2.25rem;
+    padding: 1rem 1.125rem 0rem 1.125rem;
     padding-bottom: 0;
 `
 
@@ -120,23 +125,26 @@ const CommentColumnBox = styled.div`
     text-align: right;
     flex-grow: 1;
     flex-shrink: 0;
-    padding-left: 0.5rem;
-    font-size: 1.125rem;
+    padding-left: 1rem;
+    font-size: 0.9375rem;
+    float: right;
 `
 //color: #ced4da;
 
 // color: #ced4da;
 const PostNumber = styled.div`
-    min-width: 1.8rem;
-    font-size: 1.1rem;
+    font-weight: 500;
+    padding-right: 1rem;
+    font-size: 1rem;
+    align-self: inherit;
 `
 
 const RowBox = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 1rem;
     justify-content: center;
+    margin-bottom: 0.875rem;
 `
 
 const ContentRowBox = styled(RowBox)`

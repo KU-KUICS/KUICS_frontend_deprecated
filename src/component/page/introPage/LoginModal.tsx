@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './Modal.scss'
-import Context from '../Context'
 
 const { REACT_APP_API_HOST } = process.env
 
