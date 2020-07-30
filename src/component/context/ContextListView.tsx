@@ -49,8 +49,6 @@ export const ScrollList = styled.div`
     width: 90%;
 
 
-    padding: 1rem 1rem 0rem 1rem;
-
     border-radius: 50px 50px 0 0;
 
     opacity: 0;

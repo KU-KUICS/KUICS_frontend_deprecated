@@ -118,6 +118,9 @@ const fadeOut = keyframes`
     }
 `
 const AbsoluteLayout = styled.div`
+    position: relative;
+    transform: translate(0, 50%);
+    align-self: center;
     display: flex;
     flex-direction: column;
     height: 100%;
