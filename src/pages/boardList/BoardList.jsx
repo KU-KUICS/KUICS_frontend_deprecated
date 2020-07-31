@@ -18,21 +18,24 @@ const BoardList = () => {
   const today = new Date();
   const date = today.getDate();
   const mon = month[today.getMonth()];
-  const time = `${(new Date()).getHours().toString()}:${(new Date()).getMinutes().toString()}`;
+  const hour = today.getHours();
+  const min = today.getMinutes();
+  const minProc = min < 10 ? `0${min}` : min;
+  const time = `${hour}:${minProc}`;
 
   const todayString = `${date} ${mon} ${time}`;
 
   return (
     <>
       <div>
-        drwxrwx--- - kuics kuics
+        drwxrwx--- - kuics kuics 4096
         {' '}
         {todayString}
         {' '}
         notice
       </div>
       <div>
-        drwxrwx--- - kuics kuics
+        drwxrwx--- - kuics kuics 4096
         {' '}
         {todayString}
         {' '}
