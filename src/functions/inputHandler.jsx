@@ -29,10 +29,12 @@ const InputHandler = (props) => {
           setLocation('~');
         } else if (loc === '~/') {
           setLocation('~');
-        } else if (loc === 'board' && location === '~') {
-          setLocation('~/board');
-        } else if (loc === 'notice' && location === '~') {
-          setLocation('~/notice');
+        } else if (location === '~') {
+          if (loc === 'board') {
+            setLocation('~/board');
+          } else if (loc === 'notice') {
+            setLocation('~/notice');
+          }
         }
         setInput('clear');
       } else if (value === 'ls') {
