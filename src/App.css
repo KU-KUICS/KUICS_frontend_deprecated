@@ -22,3 +22,8 @@
 a {
   color: lime;
 }
+
+input, input:focus, input:hover {
+  border: none;
+  outline: none;
+}
