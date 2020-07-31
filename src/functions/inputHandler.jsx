@@ -38,7 +38,7 @@ const InputHandler = (props) => {
           }
         }
         setInput('clear');
-      } else if (value === 'ls' || value === 'll') {
+      } else if (value.startsWith('ls') || value.startsWith('ll')) {
         switch (location) {
           case '~/board':
             setInput('ls board');

@@ -3,6 +3,7 @@
   padding: 0px;
   font-family: Consolas,monaco,monospace; 
   background-color: black;
+  text-shadow: 0 0 10px #c1ffbd;
 }
 
 @media only screen and (max-width: 480px) {
