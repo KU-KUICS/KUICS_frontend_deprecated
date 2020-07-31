@@ -6,13 +6,21 @@ const Label = styled.div`
     font-size: 2rem;
 `;
 
-const Header = () => {
-    return (
-        <Label>
-           <div style={{fontSize: "3rem"}}>Welcome <span style={{color: "yellow"}}>KUICS</span> homepage...</div>
-           <div>type <span style={{color: "yellow"}}>help</span> to see command list</div>
-        </Label>
-    )
-}
+const Header = () => (
+  <Label>
+    <div style={{ fontSize: '3rem' }}>
+      Welcome to
+      <span style={{ color: 'yellow' }}>KUICS</span>
+      {' '}
+      homepage...
+    </div>
+    <div>
+      type
+      <span style={{ color: 'yellow' }}>help</span>
+      {' '}
+      to see command list
+    </div>
+  </Label>
+);
 
 export default Header;
