@@ -21,6 +21,7 @@ const InputHandler = (props) => {
       const prompt = document.getElementsByClassName('prompt')[0];
       setCount(count + 1);
       const { value } = prompt;
+
       if (value === '') {
         setInput('intro');
       } else if (value.startsWith('cd')) {
@@ -37,7 +38,7 @@ const InputHandler = (props) => {
           }
         }
         setInput('clear');
-      } else if (value === 'ls') {
+      } else if (value === 'ls' || value === 'll') {
         switch (location) {
           case '~/board':
             setInput('ls board');
