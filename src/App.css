@@ -5,6 +5,20 @@
   background-color: black;
 }
 
+@media only screen and (max-width: 480px) {
+  * {
+    font-size: 26px !important;
+  }
+
+  .terminal {
+    border: 1rem solid #790030;
+  }
+
+  .not-found {
+    width: 10rem;
+  }
+}
+
 a {
   color: lime;
 }

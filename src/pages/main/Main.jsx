@@ -4,15 +4,13 @@ import Terminal from '../../components/terminal/Terminal';
 import Header from '../../components/common/Header';
 import Prompt from '../../components/terminal/Prompt';
 
-const Main = () => {
-    return (
-        <>
-            <Terminal>
-                <Header/>
-                <Prompt/>
-            </Terminal>
-        </>
-    )
-}
+const Main = () => (
+  <>
+    <Terminal className="terminal">
+      <Header />
+      <Prompt />
+    </Terminal>
+  </>
+);
 
 export default Main;
