@@ -13,20 +13,48 @@ const StyledInput = styled.input`
 `;
 
 const InputHandler = (props) => {
+  const { setCount, setLocation, setInput } = props.func;
+  const { count, location } = props.states;
+
   const getKeyCode = useCallback((event) => {
     if (event.keyCode === 13) {
       const prompt = document.getElementsByClassName('prompt')[0];
-      const { count } = props;
-      props.setCount(count + 1);
-      console.log(prompt.value);
-      if (prompt.value === '') {
-        props.setInput('intro');
+      setCount(count + 1);
+      const { value } = prompt;
+
+      if (value === '') {
+        setInput('intro');
+      } else if (value.startsWith('cd')) {
+        const loc = value.split(' ')[1];
+        if ((loc === '..' || loc === '../') && location.startsWith('~/')) {
+          setLocation('~');
+        } else if (loc === '~/') {
+          setLocation('~');
+        } else if (location === '~') {
+          if (loc === 'board') {
+            setLocation('~/board');
+          } else if (loc === 'notice') {
+            setLocation('~/notice');
+          }
+        }
+        setInput('clear');
+      } else if (value.startsWith('ls') || value.startsWith('ll')) {
+        switch (location) {
+          case '~/board':
+            setInput('ls board');
+            break;
+          case '~/notice':
+            setInput('ls notice');
+            break;
+          default:
+            setInput('ls');
+        }
       } else {
-        props.setInput(prompt.value);
+        setInput(value);
       }
       prompt.value = '';
     } else if (event.keyCode === 81) {
-      props.setCount(0);
+      setCount(0);
     }
   }, [props]);
 

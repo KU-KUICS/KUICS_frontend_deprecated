@@ -10,12 +10,14 @@ const Header = () => (
   <Label>
     <div style={{ fontSize: '3rem' }}>
       Welcome to
+      {' '}
       <span style={{ color: 'yellow' }}>KUICS</span>
       {' '}
       homepage...
     </div>
     <div>
       type
+      {' '}
       <span style={{ color: 'yellow' }}>help</span>
       {' '}
       to see command list

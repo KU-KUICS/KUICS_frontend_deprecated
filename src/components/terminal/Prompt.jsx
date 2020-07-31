@@ -10,6 +10,7 @@ import Help from '../../pages/help/Help';
 import Login from '../../pages/login/Login';
 import Intro from '../../pages/intro/Intro';
 import BoardList from '../../pages/boardList/BoardList';
+import ArticleList from '../../pages/articleList/ArticleList';
 
 import Credit from '../../pages/credit/Credit';
 import NotFound from '../../pages/notFound/NotFound';
@@ -22,21 +23,25 @@ const StyledPrompt = styled.div`
 const Prompt = () => {
   const [input, setInput] = useState('intro');
   const [count, setCount] = useState(0);
+  const [location, setLocation] = useState('~');
   return (
     <>
       <StyledPrompt>
         <Router>
           <div style={{ paddingTop: '1rem' }} />
-          {'>'}
-          <InputHandler setInput={setInput} setCount={setCount} count={count} />
+          {`${location}>`}
+          <InputHandler func={{ setInput, setCount, setLocation }} states={{ count, location }} />
           <Redirect to={input} />
 
           <Switch style={{ color: 'lime', fontSize: '2rem' }}>
             <Route path="/login">
               <Login />
             </Route>
+            <Route path="/ls">
+              <BoardList />
+            </Route>
             <Route path="/ls board">
-              <BoardList count={count} />
+              <ArticleList count={count} />
             </Route>
             <Route path="/ls notice" />
             <Route path="/help">
@@ -47,6 +52,9 @@ const Prompt = () => {
             </Route>
             <Route path="/intro">
               <Intro />
+            </Route>
+            <Route path="/clear">
+              <div />
             </Route>
             <Route path="/">
               <NotFound />
