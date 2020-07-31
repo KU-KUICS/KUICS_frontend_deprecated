@@ -11,11 +11,11 @@
   }
 
   .terminal {
-    border: 1rem solid #790030;
-  }
-
-  .not-found {
-    width: 10rem;
+    border: 5px solid #790030 !important;
+    width: 80% !important;
+    height: 80% !important;
+    padding: 1rem !important;
+    margin: 1px !important;
   }
 }
 
