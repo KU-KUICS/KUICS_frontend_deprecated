@@ -4,3 +4,7 @@
   font-family: Consolas,monaco,monospace; 
   background-color: black;
 }
+
+a {
+  color: lime;
+}
