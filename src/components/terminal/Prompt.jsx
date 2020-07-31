@@ -1,57 +1,61 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import {
+  BrowserRouter as Router, Redirect, Switch, Route,
+} from 'react-router-dom';
 
-import Result from './Result';
+import InputHandler from '../../functions/inputHandler';
+
+import Help from '../../pages/help/Help';
+import Login from '../../pages/login/Login';
+import Intro from '../../pages/intro/Intro';
+import BoardList from '../../pages/boardList/BoardList';
+
+import Credit from '../../pages/credit/Credit';
+import NotFound from '../../pages/notFound/NotFound';
 
 const StyledPrompt = styled.div`
     color: lime;
     font-size: 2rem;
 `;
 
-const StyledInput = styled.input`
-    background: none;
-    border: none;
-    color: lime;
-    font-size: 2rem;
-    margin: 10px;
-    vertical-align: baseline;
-
-    width: 80%;
-`;
-
-const InputHandler = (props) => {
-    const getKeyCode = useCallback((event) => {
-        if (event.keyCode === 13) {
-            const prompt = document.getElementsByClassName('prompt')[0];
-            props.setInput(prompt.value);
-            prompt.value = '';
-        }
-    }, []);
-
-    useEffect(() => {
-        document.addEventListener("keydown", getKeyCode, false);
-
-        return () => {
-            document.removeEventListener("keydown", getKeyCode, false);
-        }
-    }, [getKeyCode]);
-
-    return (
-        <StyledInput className="prompt" autoFocus={true}/>
-    )
-}
-
 const Prompt = () => {
-    const [input, setInput] = useState('');
-    return (
-        <>
-            <StyledPrompt>
-                <div dangerouslySetInnerHTML={{__html: "<br>"}}/>
-                {'>'}<InputHandler setInput={setInput}/>
-            </StyledPrompt>
-            <Result input={input}/>
-        </>
-    )
-}
+  const [input, setInput] = useState('intro');
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <StyledPrompt>
+        <Router>
+          <div style={{ paddingTop: '1rem' }} />
+          {'>'}
+          <InputHandler setInput={setInput} setCount={setCount} count={count} />
+          <Redirect to={input} />
+
+          <Switch style={{ color: 'lime', fontSize: '2rem' }}>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/ls board">
+              <BoardList count={count} />
+            </Route>
+            <Route path="/ls notice" />
+            <Route path="/help">
+              <Help />
+            </Route>
+            <Route path="/credit">
+              <Credit />
+            </Route>
+            <Route path="/intro">
+              <Intro />
+            </Route>
+            <Route path="/">
+              <NotFound />
+            </Route>
+          </Switch>
+        </Router>
+      </StyledPrompt>
+    </>
+  );
+};
 
 export default Prompt;
