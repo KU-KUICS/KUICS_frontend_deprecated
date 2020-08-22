@@ -14,9 +14,19 @@ const Help = () => (
     <div>
       <Command>
         ls [
-        <Link to="/ls notice" style={{ textDecoration: 'none', color: 'yellow' }}>notice</Link>
+        <Link
+          to="/ls notice"
+          style={{ textDecoration: 'none', color: 'yellow' }}
+        >
+          notice
+        </Link>
         |
-        <Link to="/ls board" style={{ textDecoration: 'none', color: 'yellow' }}>board</Link>
+        <Link
+          to="/ls board"
+          style={{ textDecoration: 'none', color: 'yellow' }}
+        >
+          board
+        </Link>
         ]
       </Command>
       : show list of articles

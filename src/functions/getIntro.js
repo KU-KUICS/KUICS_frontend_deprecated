@@ -1,9 +1,7 @@
-const getIntro = () => {
-  const request = new XMLHttpRequest();
-  request.open('GET', 'http://test.kuics.kro.kr:4000/api/intro', false);
-  request.send(null);
-
-  return request.responseText;
+const getIntro = async () => {
+  const data = await fetch('http://localhost:4000/api/intro');
+  const response = await data.json();
+  return response;
 };
 
 export default getIntro;

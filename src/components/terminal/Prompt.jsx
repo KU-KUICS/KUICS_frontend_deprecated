@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
-  BrowserRouter as Router, Redirect, Switch, Route,
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
 } from 'react-router-dom';
 
 import InputHandler from '../../functions/inputHandler';
@@ -16,8 +19,8 @@ import Credit from '../../pages/credit/Credit';
 import NotFound from '../../pages/notFound/NotFound';
 
 const StyledPrompt = styled.div`
-    color: lime;
-    font-size: 2rem;
+  color: lime;
+  font-size: 2rem;
 `;
 
 const Prompt = () => {
@@ -30,7 +33,10 @@ const Prompt = () => {
         <Router>
           <div style={{ paddingTop: '1rem' }} />
           {`${location}>`}
-          <InputHandler func={{ setInput, setCount, setLocation }} states={{ count, location }} />
+          <InputHandler
+            func={{ setInput, setCount, setLocation }}
+            states={{ count, location }}
+          />
           <Redirect to={input} />
 
           <Switch style={{ color: 'lime', fontSize: '2rem' }}>

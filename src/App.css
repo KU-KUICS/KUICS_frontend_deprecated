@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Consolas,monaco,monospace; 
+  font-family: Consolas, monaco, monospace;
   background-color: black;
   text-shadow: 0 0 10px #c1ffbd;
 }
@@ -24,7 +24,10 @@ a {
   color: lime;
 }
 
-input, input:focus, input:hover {
+input,
+input:focus,
+input:hover {
   border: none;
   outline: none;
 }
+
