@@ -8,12 +8,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const App = () => {
     return (
-        <Router>
-            <Appbar />
-            <Route exact path="/board" component={BoardPage}></Route>
-            <Route exact path="/" component={IntroPage}></Route>
-            <Route exact path="/board/write" component={WritePage} />
-        </Router>
+        <>
+            <Router>
+                <Appbar />
+                <Route exact path="/board" component={BoardPage}></Route>
+                <Route exact path="/" component={IntroPage}></Route>
+                <Route exact path="/board/write" component={WritePage} />
+            </Router>
+        </>
     );
 };
 

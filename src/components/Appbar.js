@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grommet, Header, Text, Button, Anchor, Nav, Menu, ResponsiveContext } from 'grommet';
 import { Login as LoginIcon } from 'grommet-icons';
+import { Link } from 'react-router-dom';
 
 const theme = {
     global: {
@@ -10,9 +11,6 @@ const theme = {
         },
     },
     anchor: {
-        color: {
-            light: 'brand',
-        },
         fontWeight: 400,
         textDecoration: 'none',
         hover: {
@@ -29,24 +27,28 @@ const Appbar = () => {
             <ResponsiveContext.Consumer>
                 {size => (
                     <Header background="header" pad="medium" border={{ color: 'border', side: 'bottom' }} gap="none">
-                        <Anchor href="/" alignSelf="center" size="xlarge" margin="none" style={{ fontWeight: 600 }}>
-                            KUICS
-                        </Anchor>
+                        <Link to="/">
+                            <Anchor alignSelf="center" size="xlarge" margin="none" style={{ fontWeight: 600 }}>
+                                KUICS
+                            </Anchor>
+                        </Link>
                         {size !== 'small' ? (
                             <Nav direction="row" align="center" className="NavBar">
-                                <Anchor label="소개" href="info" />
-                                <Anchor label="오시는 길" href="/where" />
-                                <Anchor label="문의" href="/qna" />
-                                <Anchor label="CTF" href="/CTF" />
-                                <Anchor label="게시판" href="/board" />
-                                <Button
-                                    primary
-                                    focusIndicator
-                                    color="brand"
-                                    icon={<LoginIcon />}
-                                    href="/login"
-                                    label="Login"
-                                />
+                                <Link to="/history">
+                                    <Anchor label="역사" />
+                                </Link>
+                                <Link to="/qna">
+                                    <Anchor label="문의" />
+                                </Link>
+                                <Link to="/CTF">
+                                    <Anchor label="CTF" />
+                                </Link>
+                                <Link to="/board">
+                                    <Anchor label="게시판" />
+                                </Link>
+                                <Link to="/login">
+                                    <Button primary focusIndicator color="brand" icon={<LoginIcon />} label="Login" />
+                                </Link>
                             </Nav>
                         ) : (
                             <Menu

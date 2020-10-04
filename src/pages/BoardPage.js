@@ -76,18 +76,19 @@ const BoardPage = () => {
                         type="digital"
                         style={{ marginLeft: 'auto', position: 'relative', top: '4px', verticalAlign: 'bottom' }}
                     />
-                    <Button
-                        primary
-                        href="/board/write"
-                        label="글쓰기"
-                        pad="medium"
-                        focusIndicator
-                        color="bgcolor"
-                        icon={<EditIcon />}
-                        style={{ margin: 'auto', marginLeft: '1rem', marginRight: '1rem', padding: '0.3rem 1rem' }}
-                    >
-                        글쓰기
-                    </Button>
+                    <Link to="/board/write">
+                        <Button
+                            primary
+                            label="글쓰기"
+                            pad="medium"
+                            focusIndicator
+                            color="bgcolor"
+                            icon={<EditIcon />}
+                            style={{ margin: 'auto', marginLeft: '1rem', marginRight: '1rem', padding: '0.3rem 1rem' }}
+                        >
+                            글쓰기
+                        </Button>
+                    </Link>
                 </Box>
                 <Sidebar></Sidebar>
 

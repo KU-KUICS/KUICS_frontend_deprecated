@@ -13,6 +13,12 @@ body {
     padding: 0;
 }
 
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 .HoverStyle:hover {
     outline: 3px solid #f0f0f5;
 }
